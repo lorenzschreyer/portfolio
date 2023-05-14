@@ -1,10 +1,10 @@
 {
-  "short_name": "Hamish Williams",
-  "name": "Design Portfolio of Hamish Williams",
+  "short_name": "Lorenz Schreyer",
+  "name": "Portfolio of Lorenz Schreyer",
   "icons": [
     {
       "src": "favicon.png",
-      "sizes": "64x64",
+      "sizes": "32x32",
       "type": "image/png"
     },
     {

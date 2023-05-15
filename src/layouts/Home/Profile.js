@@ -1,6 +1,6 @@
-import profileImgLarge from 'assets/profile-large.jpg';
-import profileImgPlaceholder from 'assets/profile-placeholder.jpg';
-import profileImg from 'assets/profile.jpg';
+import profileImgLarge from 'assets/profile-3-large.png';
+import profileImgPlaceholder from 'assets/profile-3-placeholder.png';
+import profileImg from 'assets/profile-3.png';
 import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
 import { Divider } from 'components/Divider';
@@ -85,7 +85,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   placeholder={profileImgPlaceholder}
                   srcSet={[profileImg, profileImgLarge]}
                   sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
-                  alt="Me sitting on stairs in Ingolstadt"
+                  alt="Me standing in front of the Louvre in Paris"
                 />
               </div>
             </div>

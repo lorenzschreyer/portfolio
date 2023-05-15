@@ -26,11 +26,11 @@ export const Home = () => {
   const intro = useRef();
   const projectOne = useRef();
   const projectTwo = useRef();
-  const projectThree = useRef();
+  // const projectThree = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [intro, projectOne, projectTwo, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -68,8 +68,8 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <Meta
-        title="Developer"
-        description="- Developer portfolio of Lorenz Schreyer —"
+        title="Software"
+        description="Developer portfolio of Lorenz Schreyer"
       />
       <Intro
         id="intro"
@@ -82,10 +82,10 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Designing the future of education"
-        description="Designing a platform to help educators build better online courseware"
+        title="coding challenge platform for amplimind"
+        description="Implementing a open-source platform to facilitate the application process of software companies."
         buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
+        buttonLink="/projects/amplimind-codingchallenge"
         model={{
           type: 'laptop',
           alt: 'Smart Sparrow lesson builder',
@@ -122,26 +122,26 @@ export const Home = () => {
           ],
         }}
       />
-      <ProjectSummary
-        id="project-3"
-        sectionRef={projectThree}
-        visible={visibleSections.includes(projectThree.current)}
-        index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
-        buttonText="View project"
-        buttonLink="/projects/slice"
-        model={{
-          type: 'laptop',
-          alt: 'Annotating a biomedical image in the Slice app',
-          textures: [
-            {
-              srcSet: [sliceTexture, sliceTextureLarge],
-              placeholder: sliceTexturePlaceholder,
-            },
-          ],
-        }}
-      />
+      {/*<ProjectSummary*/}
+      {/*  id="project-3"*/}
+      {/*  sectionRef={projectThree}*/}
+      {/*  visible={visibleSections.includes(projectThree.current)}*/}
+      {/*  index={3}*/}
+      {/*  title="Biomedical image collaboration"*/}
+      {/*  description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"*/}
+      {/*  buttonText="View project"*/}
+      {/*  buttonLink="/projects/slice"*/}
+      {/*  model={{*/}
+      {/*    type: 'laptop',*/}
+      {/*    alt: 'Annotating a biomedical image in the Slice app',*/}
+      {/*    textures: [*/}
+      {/*      {*/}
+      {/*        srcSet: [sliceTexture, sliceTextureLarge],*/}
+      {/*        placeholder: sliceTexturePlaceholder,*/}
+      {/*      },*/}
+      {/*    ],*/}
+      {/*  }}*/}
+      {/*/>*/}
       <Profile
         sectionRef={details}
         visible={visibleSections.includes(details.current)}

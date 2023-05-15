@@ -88,7 +88,7 @@ export const Home = () => {
         buttonLink="/projects/amplimind-codingchallenge"
         model={{
           type: 'laptop',
-          alt: 'Smart Sparrow lesson builder',
+          alt: 'coding challenge',
           textures: [
             {
               srcSet: [codingChallenge, codingChallengeLarge],

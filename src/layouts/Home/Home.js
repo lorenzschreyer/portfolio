@@ -7,9 +7,11 @@ import gamestackTexture from 'assets/gamestack-login.jpg';
 import sliceTextureLarge from 'assets/slice-app-large.jpg';
 import sliceTexturePlaceholder from 'assets/slice-app-placeholder.jpg';
 import sliceTexture from 'assets/slice-app.jpg';
-import codingChallengeLarge from 'assets/codingchallenge-title-large.png';
-import codingChallengePlaceholder from 'assets/codingchallenge-title-placeholder.png';
-import codingChallenge from 'assets/codingchallenge-title.png';
+import codingChallengeLarge from 'assets/coding-challenge-title-large.png';
+import codingChallengePlaceholder from 'assets/coding-challenge-title-placeholder.png';
+import codingChallenge from 'assets/coding-challenge-title.png';
+import solarMonitorMobile from 'assets/solar-monitor-mobile.png';
+import solarMonitorMobilePlaceholder from 'assets/solar-monitor-mobile-placeholder.png';
 import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
 import { Intro } from 'layouts/Home/Intro';
@@ -99,6 +101,7 @@ export const Home = () => {
       />
       <ProjectSummary
         id="project-2"
+        // change side
         alternate
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
@@ -109,18 +112,24 @@ export const Home = () => {
         buttonLink="https://gamestack.hamishw.com"
         model={{
           type: 'phone',
-          alt: 'App login screen',
+          alt: 'solar monitor schreyer',
           textures: [
             {
-              srcSet: [gamestackTexture, gamestackTextureLarge],
-              placeholder: gamestackTexturePlaceholder,
+              srcSet: [solarMonitorMobile, solarMonitorMobile],
+              placeholder: solarMonitorMobilePlaceholder,
             },
-            {
-              srcSet: [gamestackTexture2, gamestackTexture2Large],
-              placeholder: gamestackTexture2Placeholder,
-            },
-          ],
+          ]
         }}
+        // model={{
+        //     type: 'laptop',
+        //     alt: 'solar monitor schreyer',
+        //     textures: [
+        //       {
+        //         srcSet: [codingChallengePlaceholder, codingChallengePlaceholder],
+        //         placeholder: codingChallengePlaceholder,
+        //       },
+        //     ],
+        //   }}
       />
       {/*<ProjectSummary*/}
       {/*  id="project-3"*/}

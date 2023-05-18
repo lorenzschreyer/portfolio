@@ -1,4 +1,4 @@
-import projectKatakana from 'assets/katakana-project.svg?url';
+import projectBinary from 'assets/binary-project.svg?url';
 import { Button } from 'components/Button';
 import { Divider } from 'components/Divider';
 import { Heading } from 'components/Heading';
@@ -38,7 +38,7 @@ export const ProjectSummary = ({
   const phoneSizes = `(max-width: ${media.tablet}px) 30vw, 20vw`;
   const laptopSizes = `(max-width: ${media.tablet}px) 80vw, 40vw`;
 
-  const renderKatakana = (device, visible) => (
+  const renderBinaries = (device, visible) => (
     <svg
       aria-hidden="true"
       width="750"
@@ -50,7 +50,7 @@ export const ProjectSummary = ({
       className={styles.svg}
       data-device={device}
     >
-      <use href={`${projectKatakana}#katakana-project`} />
+      <use href={`${projectBinary}#binary-project`} />
     </svg>
   );
 
@@ -91,7 +91,7 @@ export const ProjectSummary = ({
     <div className={styles.preview}>
       {model.type === 'laptop' && (
         <>
-          {renderKatakana('laptop', visible)}
+          {renderBinaries('laptop', visible)}
           <div className={styles.model} data-device="laptop">
             <Model
               alt={model.alt}
@@ -111,9 +111,9 @@ export const ProjectSummary = ({
           </div>
         </>
       )}
-      {model.type === 'phone' && (
+      {model.type === 'phones' && (
         <>
-          {renderKatakana('phone', visible)}
+          {renderBinaries('phone', visible)}
           <div className={styles.model} data-device="phone">
             <Model
               alt={model.alt}
@@ -134,6 +134,29 @@ export const ProjectSummary = ({
                   position: { x: 0.6, y: -0.5, z: 0.3 },
                   texture: {
                     ...model.textures[1],
+                    sizes: phoneSizes,
+                  },
+                },
+              ]}
+            />
+          </div>
+        </>
+      )}
+      {model.type === 'phone' && (
+        <>
+          {renderBinaries('phone', visible)}
+          <div className={styles.model} data-device="phone">
+            <Model
+              alt={model.alt}
+              cameraPosition={{ x: 0, y: 0, z: 10 }}
+              showDelay={300}
+              show={visible}
+              models={[
+                {
+                  ...deviceModels.phone,
+                  position: { x: 0, y: 0, z: 0 },
+                  texture: {
+                    ...model.textures[0],
                     sizes: phoneSizes,
                   },
                 },

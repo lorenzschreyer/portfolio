@@ -110,7 +110,7 @@ export const Model = ({
     scene.current.add(modelGroup.current);
 
     // Lighting
-    const ambientLight = new AmbientLight(0xffffff, 1.2);
+    const ambientLight = new AmbientLight(0xffffff, 2.0);
     const keyLight = new DirectionalLight(0xffffff, 1.1);
     const fillLight = new DirectionalLight(0xffffff, 0.8);
 
@@ -397,7 +397,8 @@ const Device = ({
 
       gltf.scene.traverse(async node => {
         if (node.material) {
-          node.material.color = new Color(0xA3AAAE);
+          node.material.color = new Color(0x6f7387);
+          // node.material.color = new Color(0x1f2025);
           node.material.color.convertSRGBToLinear();
         }
 

@@ -39,7 +39,7 @@ export function Page404() {
                   <DecoderText text="Error: Not Found" start={visible} delay={300} />
                 </Heading>
                 <Text className={styles.description} data-visible={visible} as="p">
-                  The page you were looking for does not exist, unless you wanted to see this beautiful 404 page with a "Matrix-Code" like animation.
+                  The page you were looking for does not exist, unless you wanted to see this beautiful 404 page with a &quot;Matrix-Code&quot; like animation.
                   Then you are in the right place
                 </Text>
                 <Button

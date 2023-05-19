@@ -12,7 +12,6 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
 import {socialLinks} from "../../components/Navbar/navData";
 import {Button} from "../../components/Button";
-import * as url from "url";
 
 const disciplines = ['{ Developer }', '< Architect >', '« Designer »', '❝ Tester ❞', '[ Security ]'];
 
@@ -22,7 +21,6 @@ export const Home = () => {
   const intro = useRef();
   const projectOne = useRef();
   const projectTwo = useRef();
-  // const projectThree = useRef();
   const details = useRef();
 
   useEffect(() => {

@@ -1,4 +1,3 @@
-import projectBinary from 'assets/binary-project.svg?url';
 import { Button } from 'components/Button';
 import { Divider } from 'components/Divider';
 import { Heading } from 'components/Heading';
@@ -10,9 +9,8 @@ import { Transition } from 'components/Transition';
 import { useWindowSize } from 'hooks';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import { cssProps, media } from 'utils/style';
+import { media } from 'utils/style';
 import styles from './ProjectSummary.module.css';
-import {Intro} from "./Intro";
 
 const Model = dynamic(() => import('components/Model').then(mod => mod.Model));
 
@@ -34,7 +32,7 @@ export const ProjectSummary = ({
   const { width } = useWindowSize();
   const titleId = `${id}-title`;
   const isMobile = width <= media.tablet;
-  const deviceOpacity = theme.themeId === 'light' ? 0.3 : 0.5;
+  // const deviceOpacity = theme.themeId === 'light' ? 0.3 : 0.5;
   const indexText = index < 10 ? `0${index}` : index;
   const phoneSizes = `(max-width: ${media.tablet}px) 30vw, 20vw`;
   const laptopSizes = `(max-width: ${media.tablet}px) 80vw, 40vw`;

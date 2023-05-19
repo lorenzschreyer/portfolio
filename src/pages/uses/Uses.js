@@ -52,7 +52,7 @@ export const Uses = () => {
                     PhpStorm and C-Lion are well known to me.
                   </ListItem>
                   <ListItem>
-                    I especially like the "Code with me" feature of Jet Brains Products,
+                    I especially like the &quot;Code with me&quot; feature of Jet Brains Products,
                     because it allows to work together even more efficiently and better.
                   </ListItem>
                   <ListItem>

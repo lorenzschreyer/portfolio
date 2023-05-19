@@ -1,5 +1,4 @@
 import { Footer } from 'components/Footer';
-import { Image } from 'components/Image';
 import { Meta } from 'components/Meta';
 import codingChallenge from 'assets/coding-challenge.png';
 import codingChallengeLarge from 'assets/coding-challenge-large.png';
@@ -13,18 +12,14 @@ import {
   ProjectHeader,
   ProjectImage,
   ProjectSection,
-  ProjectSectionColumns,
   ProjectSectionContent,
   ProjectSectionHeading,
   ProjectSectionText,
-  ProjectTextRow,
 } from 'layouts/Project';
 import { Fragment } from 'react';
 import { media } from 'utils/style';
 import styles from './AmplimindCodingChallenge.module.css';
 import {Button} from "../../../components/Button";
-import {socialLinks} from "../../../components/Navbar/navData";
-import {List, ListItem} from "../../../components/List";
 import {Table, TableBody, TableCell, TableHeadCell, TableRow} from "../../../components/Table";
 
 const title = 'coding challenge platform for amplimind';

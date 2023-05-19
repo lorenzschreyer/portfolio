@@ -25,6 +25,7 @@ import styles from './AmplimindCodingChallenge.module.css';
 import {Button} from "../../../components/Button";
 import {socialLinks} from "../../../components/Navbar/navData";
 import {List, ListItem} from "../../../components/List";
+import {Table, TableBody, TableCell, TableHeadCell, TableRow} from "../../../components/Table";
 
 const title = 'coding challenge platform for amplimind';
 const description =
@@ -69,40 +70,53 @@ export const AmplimindCodingChallenge = () => {
           </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection padding="bottom">
-          <ProjectSectionHeading>The vision</ProjectSectionHeading>
-          <ProjectSectionText>
-            As a team of 12 computer science students,
-            we were assigned a project under the supervision of
-            amplimind to improve the application process at the company software supported.
-            Despite the business use at said company, the project is kept <b>open source</b>.
-          </ProjectSectionText>
+          <ProjectSectionContent>
+            <ProjectSectionHeading>The vision</ProjectSectionHeading>
+            <ProjectSectionText>
+              As a team of 12 computer science students,
+              we were assigned a project under the supervision of
+              amplimind to improve the application process at the company software supported.
+              Despite the business use at said company, the project is kept <b>open source</b>.
+            </ProjectSectionText>
+          </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection light>
-          <ProjectSectionHeading>The approach</ProjectSectionHeading>
-          <ProjectSectionText>
-            Our approach was primarily a one-time link that is sent to
-            selected applicants and thus no <b>personal</b> data and passwords have to be stored and transmitted.
+          <ProjectSectionContent>
+            <ProjectSectionHeading>The approach</ProjectSectionHeading>
+            <ProjectSectionText>
+              Our approach was primarily a one-time link that is sent to
+              selected applicants and thus no <b>personal</b> data and passwords have to be stored and transmitted.
 
-            After the link is opened, the user must confirm the start of a challenge,
-            is given a certain amount of time to complete and last has the possibility to upload a solution.
-            The uploaded files are transferred to a <b>Github Repository</b> where they are checked and linted by an <b>Github Action</b>.
-          </ProjectSectionText>
+              After the link is opened, the user must confirm the start of a challenge,
+              is given a certain amount of time to complete and last has the possibility to upload a solution.
+              The uploaded files are transferred to a <b>Github Repository</b> where they are checked and linted by an <b>Github Action</b>.
+            </ProjectSectionText>
+          </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection>
-          <ProjectSectionHeading>Architecture and technologies</ProjectSectionHeading>
-          <ProjectSectionColumns>
-              <List>
-                <ListItem>frontend server, displaying the web-based application</ListItem>
-                <ListItem>backend server, implementing the applications logic</ListItem>
-                <ListItem>database, holding the data</ListItem>
-              </List>
-
-              <List>
-                <ListItem>Angular/Node.js</ListItem>
-                <ListItem>Django library (python)</ListItem>
-                <ListItem>PostgreSQL</ListItem>
-              </List>
-          </ProjectSectionColumns>
+          <ProjectSectionContent>
+            <ProjectSectionHeading>Architecture and technologies</ProjectSectionHeading>
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableHeadCell>frontend</TableHeadCell>
+                  <TableCell>Angular/Node.js</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableHeadCell>backend</TableHeadCell>
+                  <TableCell>Django framework (python)</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableHeadCell>database</TableHeadCell>
+                  <TableCell>PostgreSQL</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableHeadCell>deployment</TableHeadCell>
+                  <TableCell>Amazon Web Services (aws)</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </ProjectSectionContent>
 
             {/*<div className={styles.sidebarImages}>*/}
             {/*  <Image*/}

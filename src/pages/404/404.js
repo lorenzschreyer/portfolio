@@ -36,11 +36,11 @@ export function Page404() {
                   as="h2"
                   level={3}
                 >
-                  <DecoderText text="Error: Redacted" start={visible} delay={300} />
+                  <DecoderText text="Error: Not Found" start={visible} delay={300} />
                 </Heading>
                 <Text className={styles.description} data-visible={visible} as="p">
-                  This page could not be found. It either doesn’t exist or was deleted. Or
-                  perhaps you don’t exist.
+                  The page you were looking for does not exist, unless you wanted to see this beautiful 404 page with a "Matrix-Code" like animation.
+                  Then you are in the right place
                 </Text>
                 <Button
                   secondary
@@ -70,11 +70,11 @@ export function Page404() {
               <a
                 className={styles.credit}
                 data-visible={visible}
-                href="https://www.imdb.com/title/tt0113568/"
+                href="https://www.videezy.com/technology/41786-hacker-code-running-down"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Animation from Ghost in the Shell (1995)
+                Animation from videezy
               </a>
             </div>
           </Fragment>

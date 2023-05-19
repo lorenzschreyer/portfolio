@@ -17,6 +17,7 @@ import {
 } from 'layouts/Project';
 import { Fragment } from 'react';
 import styles from './Uses.module.css';
+import {ProjectSummary} from "../../layouts/Home/ProjectSummary";
 
 export const Uses = () => {
   return (
@@ -33,8 +34,11 @@ export const Uses = () => {
         />
         <ProjectHeader
           title="Uses"
-          description="A somewhat comprehensive list of tools, apps, hardware, and more that I use on a daily basis to design and code things. And yeah, that is a Johnny Mnemonic GIF in the background."
+          description="The hardware and software that I use to implement projects in the best possible way"
+          linkLabel="Video by Crista Dina"
+          url="https://www.pexels.com/video/person-working-on-his-laptop-1851768/"
         />
+
         <ProjectSection padding="none" className={styles.section}>
           <ProjectSectionContent>
             <ProjectTextRow width="m">

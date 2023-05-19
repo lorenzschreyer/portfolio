@@ -1,6 +1,12 @@
 import { Footer } from 'components/Footer';
 import { Image } from 'components/Image';
 import { Meta } from 'components/Meta';
+import codingChallenge from 'assets/coding-challenge.png';
+import codingChallengeLarge from 'assets/coding-challenge-large.png';
+import codingChallengePlaceholder from 'assets/coding-challenge-placeholder.png';
+import codingChallengeCode from 'assets/coding-challenge-code.png';
+import codingChallengeCodeLarge from 'assets/coding-challenge-code-large.png';
+import codingChallengeCodePlaceholder from 'assets/coding-challenge-code-placeholder.png';
 import {
   ProjectBackground,
   ProjectContainer,
@@ -16,54 +22,88 @@ import {
 import { Fragment } from 'react';
 import { media } from 'utils/style';
 import styles from './AmplimindCodingChallenge.module.css';
+import {Button} from "../../../components/Button";
+import {socialLinks} from "../../../components/Navbar/navData";
+import {List, ListItem} from "../../../components/List";
 
-const title = 'Biomedical image collaboration';
+const title = 'coding challenge platform for amplimind';
 const description =
-  'This project involved designing a better way for biomedical educators and learners to annotate digital slides together.';
-const roles = ['User Research', 'UX Design', 'Interface Design'];
+  'This project involved implementation of an open-source platform to facilitate the application process of software companies.';
+const roles = ['Django Backend Development', 'GithubApi Integration', 'Test Implementation', ];
 
 export const AmplimindCodingChallenge = () => {
   return (
     <Fragment>
       <Meta title={title} prefix="Projects" description={description} />
       <ProjectContainer className={styles.slice}>
-        {/*<ProjectBackground*/}
-        {/*  src={sliceBackground}*/}
-        {/*  srcSet={`${sliceBackground.src} 1280w, ${sliceBackgroundLarge.src} 2560w`}*/}
-        {/*  placeholder={sliceBackgroundPlaceholder}*/}
-        {/*  opacity={0.8}*/}
-        {/*/>*/}
+        <ProjectBackground
+          src={codingChallengeCode}
+          srcSet={`${codingChallengeCode.src} 1280w, ${codingChallengeCodeLarge.src} 2560w`}
+          placeholder={codingChallengeCodePlaceholder}
+          opacity={0.8}
+        />
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.best.edu.au/s/q2yjjvl7?data=8%404!9%4020303!10%40-15087&version=1"
+          linkLabel="Visit amplimind"
+          url="https://www.amplimind.io"
           roles={roles}
         />
-        {/*<ProjectSection padding="top">*/}
-        {/*  <ProjectSectionContent>*/}
-        {/*    <ProjectImage*/}
-        {/*      srcSet={[sliceApp, sliceAppLarge]}*/}
-        {/*      placeholder={sliceAppPlaceholder}*/}
-        {/*      alt="The Slice web application showing a selected user annotation."*/}
-        {/*      sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 90vw, 80vw`}*/}
-        {/*    />*/}
-        {/*  </ProjectSectionContent>*/}
-        {/*</ProjectSection>*/}
+        <Button
+          secondary
+          iconHoverShift
+          className={styles.linkButton}
+          icon="chevronRight"
+          href="https://github.com/ampcc/coding-challenge"
+        >
+          View on Github
+        </Button>
+        <ProjectSection padding="top">
+          <ProjectSectionContent>
+            <ProjectImage
+              srcSet={[codingChallenge, codingChallengeLarge]}
+              placeholder={codingChallengePlaceholder}
+              alt="The Slice web application showing a selected user annotation."
+              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 90vw, 80vw`}
+            />
+          </ProjectSectionContent>
+        </ProjectSection>
+        <ProjectSection padding="bottom">
+          <ProjectSectionHeading>The vision</ProjectSectionHeading>
+          <ProjectSectionText>
+            As a team of 12 computer science students,
+            we were assigned a project under the supervision of
+            amplimind to improve the application process at the company software supported.
+            Despite the business use at said company, the project is kept <b>open source</b>.
+          </ProjectSectionText>
+        </ProjectSection>
+        <ProjectSection light>
+          <ProjectSectionHeading>The approach</ProjectSectionHeading>
+          <ProjectSectionText>
+            Our approach was primarily a one-time link that is sent to
+            selected applicants and thus no <b>personal</b> data and passwords have to be stored and transmitted.
+
+            After the link is opened, the user must confirm the start of a challenge,
+            is given a certain amount of time to complete and last has the possibility to upload a solution.
+            The uploaded files are transferred to a <b>Github Repository</b> where they are checked and linted by an <b>Github Action</b>.
+          </ProjectSectionText>
+        </ProjectSection>
         <ProjectSection>
-          <ProjectSectionColumns centered className={styles.columns}>
-            <div className={styles.imagesText}>
-              <ProjectSectionHeading>Bringing it together</ProjectSectionHeading>
-              <ProjectSectionText>
-                Teachers needed a better way to create collaborative group activities by
-                annotating slides on Slice. Before starting this project, a layer could
-                only be annotated by a single user, making it difficult for learners to
-                work together.
-              </ProjectSectionText>
-              <ProjectSectionText>
-                Our solution was to allow users to be invited to a layer, where they can
-                see others’ annotations and make their own.
-              </ProjectSectionText>
-            </div>
+          <ProjectSectionHeading>Architecture and technologies</ProjectSectionHeading>
+          <ProjectSectionColumns>
+              <List>
+                <ListItem>frontend server, displaying the web-based application</ListItem>
+                <ListItem>backend server, implementing the applications logic</ListItem>
+                <ListItem>database, holding the data</ListItem>
+              </List>
+
+              <List>
+                <ListItem>Angular/Node.js</ListItem>
+                <ListItem>Django library (python)</ListItem>
+                <ListItem>PostgreSQL</ListItem>
+              </List>
+          </ProjectSectionColumns>
+
             {/*<div className={styles.sidebarImages}>*/}
             {/*  <Image*/}
             {/*    className={styles.sidebarImage}*/}
@@ -80,7 +120,7 @@ export const AmplimindCodingChallenge = () => {
             {/*    sizes={`(max-width: ${media.mobile}px) 200px, 343px`}*/}
             {/*  />*/}
             {/*</div>*/}
-          </ProjectSectionColumns>
+          {/*</ProjectSectionColumns>*/}
         </ProjectSection>
     {/*    <ProjectSection light>*/}
     {/*      <ProjectSectionContent>*/}

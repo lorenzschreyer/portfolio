@@ -19,6 +19,9 @@ import { Profile } from 'layouts/Home/Profile';
 import { ProjectSummary } from 'layouts/Home/ProjectSummary';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
+import {socialLinks} from "../../components/Navbar/navData";
+import {Button} from "../../components/Button";
+import * as url from "url";
 
 const disciplines = ['{ Developer }', '< Architect >', '« Designer »', '❝ Tester ❞', '[ Security ]'];
 
@@ -79,13 +82,18 @@ export const Home = () => {
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
+      <div className={styles.cvButton}>
+        <Button iconHoverShift href={"/cv-english.pdf"} iconEnd="file">
+          Download CV
+        </Button>
+      </div>
       <ProjectSummary
         id="project-1"
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
         title="coding challenge platform for amplimind"
-        description="Implementing a open-source platform to facilitate the application process of software companies."
+        description="Implementing an open-source platform to facilitate the application process of software companies."
         buttonText="View project"
         buttonLink="/projects/amplimind-codingchallenge"
         model={{
@@ -106,10 +114,10 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
-        buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        title="Solar Monitor for a solar system"
+        description="Development of an animated website to expose solar status of the inverter"
+        buttonText="View on Github"
+        buttonLink={socialLinks[2].url + "/solarMonitor"}
         model={{
           type: 'phone',
           alt: 'solar monitor schreyer',

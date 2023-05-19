@@ -1,17 +1,16 @@
 import profileImgLarge from 'assets/profile-3-large.png';
 import profileImgPlaceholder from 'assets/profile-3-placeholder.png';
 import profileImg from 'assets/profile-3.png';
-import { Button } from 'components/Button';
-import { DecoderText } from 'components/DecoderText';
-import { Divider } from 'components/Divider';
-import { Heading } from 'components/Heading';
-import { Image } from 'components/Image';
-import { Link } from 'components/Link';
-import { Section } from 'components/Section';
-import { Text } from 'components/Text';
-import { Transition } from 'components/Transition';
-import { Fragment, useState } from 'react';
-import { media } from 'utils/style';
+import {Button} from 'components/Button';
+import {DecoderText} from 'components/DecoderText';
+import {Divider} from 'components/Divider';
+import {Heading} from 'components/Heading';
+import {Image} from 'components/Image';
+import {Link} from 'components/Link';
+import {Section} from 'components/Section';
+import {Text} from 'components/Text';
+import {Transition} from 'components/Transition';
+import {Fragment, useState} from 'react';
 import styles from './Profile.module.css';
 
 const ProfileText = ({ visible, titleId }) => (

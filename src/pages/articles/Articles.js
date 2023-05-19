@@ -1,4 +1,3 @@
-import Barcode from 'assets/barcode.svg';
 import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
 import { Divider } from 'components/Divider';
@@ -151,7 +150,6 @@ export const Articles = ({ posts, featured }) => {
       <Heading className={styles.heading} level={5} as="h1">
         <DecoderText text="Latest articles" />
       </Heading>
-      <Barcode />
     </header>
   );
 

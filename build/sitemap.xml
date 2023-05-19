@@ -1,0 +1,22 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://lorenzschreyer.de/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://lorenzschreyer.de/articles/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://lorenzschreyer.de/uses/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://lorenzschreyer.de/projects/amplimind-codingchallenge/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://lorenzschreyer.de/articles/risks-and-fears-of-ai</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>

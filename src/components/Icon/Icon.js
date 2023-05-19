@@ -15,6 +15,7 @@ import Menu from './svg/menu.svg';
 import Pause from './svg/pause.svg';
 import Play from './svg/play.svg';
 import Send from './svg/send.svg';
+import Whatsapp from './svg/whatapp.svg';
 import Twitter from './svg/twitter.svg';
 import Instagram from './svg/instagram.svg';
 import LinkedIn from './svg/linkedIn.svg';
@@ -35,6 +36,7 @@ export const icons = {
   pause: Pause,
   play: Play,
   send: Send,
+  whatsapp: Whatsapp,
   twitter: Twitter,
   instagram: Instagram,
   linkedIn: LinkedIn,

@@ -78,7 +78,7 @@
 }
 
 .tag {
-  margin-top: 220px;
+  margin-top: 70px;
   margin-bottom: 40px;
   display: grid;
   grid-template-columns: var(--space4XL) 1fr;
@@ -88,6 +88,18 @@
   @media (--mediaTablet) {
     margin-top: 30px;
   }
+}
+
+.contactButtons {
+    margin-top: 30px;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20%;
+}
+.contactButtons > * {
+    margin: 5px 0;
 }
 
 .tagText {

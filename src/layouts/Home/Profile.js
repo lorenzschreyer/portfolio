@@ -56,15 +56,6 @@ export const Profile = ({ id, visible, sectionRef }) => {
           <div className={styles.content}>
             <div className={styles.column}>
               <ProfileText visible={visible} titleId={titleId} />
-              <Button
-                secondary
-                className={styles.button}
-                data-visible={visible}
-                href="/contact"
-                icon="send"
-              >
-                Contact me
-              </Button>
             </div>
             <div className={styles.column}>
               <div className={styles.tag} aria-hidden>
@@ -84,9 +75,29 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   delay={100}
                   placeholder={profileImgPlaceholder}
                   srcSet={[profileImg, profileImgLarge]}
-                  sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
-                  alt="Me standing in front of the Louvre in Paris"
+                  alt="This is me"
                 />
+              </div>
+              <div className={styles.contactButtons}>
+                <Button
+                  secondary
+                  className={styles.button}
+                  data-visible={visible}
+
+                  href="mailto:dev@lorenzschreyer.de"
+                  icon="send"
+                >
+                  Write me an email
+                </Button>
+                <Button
+                  secondary
+                  className={styles.button}
+                  data-visible={visible}
+                  href="https://wa.me/4917634285299"
+                  icon="whatsapp"
+                >
+                  or a whatsapp
+                </Button>
               </div>
             </div>
           </div>

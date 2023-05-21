@@ -12,6 +12,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
 import {socialLinks} from "../../components/Navbar/navData";
 import {Button} from "../../components/Button";
+import {Section} from "../../components/Section";
 
 const disciplines = ['{ Developer }', '< Architect >', '« Designer »', '❝ Tester ❞', '[ Security ]'];
 
@@ -71,11 +72,14 @@ export const Home = () => {
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
-      <div className={styles.cvButton}>
-        <Button iconHoverShift href={"/cv-english.pdf"} iconEnd="file">
-          Download CV
-        </Button>
-      </div>
+      <Section>
+        <div className={styles.cvButton}>
+          <Button iconHoverShift href={"/cv-english.pdf"} iconEnd="file">
+            Download CV
+          </Button>
+        </div>
+      </Section>
+
       <ProjectSummary
         id="project-1"
         sectionRef={projectOne}

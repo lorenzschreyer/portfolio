@@ -486,6 +486,20 @@ export function iandpp() {
                 <Heading
                   className={classes(styles.title)}
                   data-visible={true}
+                  level={4}
+                  weight="bold"
+                >
+                  Inquiry by whatsapp
+                </Heading>
+                We also offer you the option to submit your inquiries via the chat service WhatsApp and to receive corresponding feedback on your request via WhatsApp. The operator of this service is WhatsApp Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ireland (&quote;WhatsApp&quote;), a subsidiary of Facebook. Through your communication with us via WhatsApp, both we and WhatsApp receive your phone number and the information that you have contacted our customer hotline.<br/><br>
+                The aforementioned data is also forwarded by WhatsApp to Facebook&apos;s servers in the USA and processed by WhatsApp and Facebook in accordance with the WhatsApp Privacy Policy, which also includes processing for their own purposes, such as improving the WhatsApp service. We would like to point out that WhatsApp also accesses the address book of the device used and the contact data stored therein. For more information about the purpose and scope of data collection and the further processing of this data by WhatsApp and Facebook, as well as related rights and setting options to protect your privacy, please refer to the WhatsApp privacy policy at: https://www.whatsapp.com/legal/#privacy-policy.<br/><br/>
+                We process your telephone number, your name and other data provided by you and the content of your request or message in order to process your request and answer any queries you may have.<br/><br/>
+                The basis for this processing and the transmission to WhatsApp in this context is Art. 6 para. 1 p. 1 b) DSGVO, insofar as your request concerns an existing contractual relationship with us or serves to initiate such a contractual relationship. Otherwise, this data processing is based on Art. 6 para. 1 p. 1 f) DSGVO, whereby our legitimate interest is the careful processing of your respective request and the solution of any technical problems. We take your interests into account by the fact that communication via WhatsApp only exists as an additional option. Of course, you can also contact us by other means, for example by phone call, email or via our contact form on the website, as described earlier in this section. In addition, for the contact option via WhatsApp, we use a separate device where possible, in which only the contact data of the inquirers who communicate with us via WhatsApp are stored, whereby WhatsApp only receives data from inquirers who willingly use the service.<br/><br/>
+                Insofar as your aforementioned data is also transmitted to servers of WhatsApp or Facebook in the USA and processed there, WhatsApp, Facebook and we take additional measures for an adequate level of protection in the USA pursuant to Art. 44 et seq. DSGVO. This is done, for example, by agreeing to the standard data protection clauses of the EU Commission pursuant to Art. 46 (2) (c) DSGVO, which may also provide for additional safeguards such as encryption of the data depending on the level of protection required.
+
+                <Heading
+                  className={classes(styles.title)}
+                  data-visible={true}
                   level={3}
                   weight="bold"
                 >

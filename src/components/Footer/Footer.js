@@ -12,6 +12,10 @@ export const Footer = ({ className }) => (
       <Link secondary className={styles.link} href="/humans.txt" target="_self">
         credits
       </Link>
+      <span style={{marginRight: '20px'}}></span>
+      <Link primary className={styles.link} href="/imprint-privacypolicy" target="_self">
+        imprint & privacy policy
+      </Link>
     </Text>
   </footer>
 );

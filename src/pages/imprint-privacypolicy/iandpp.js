@@ -111,7 +111,7 @@ export function iandpp() {
                   Who is responsible for data collection on this website?
                 </Heading>
                 Data processing on this website is carried out by the website operator. His contact details
-                can be found in the "Notice about the responsible party" section of this privacy policy.
+                can be found in the &quot;Notice about the responsible party&quot; section of this privacy policy.
 
                 <Heading
                   className={classes(styles.title)}
@@ -170,7 +170,7 @@ export function iandpp() {
                 existing customers (Art. 6 para. 1 lit. b DSGVO) and in the interest of a secure, fast and efficient
                 provision of our online offer by internal resources. Insofar as a corresponding consent has been requested,
                 the processing is carried out exclusively on the basis of Art. 6 para. 1 lit. a DSGVO and § 25 para.
-                1 TTDSG, insofar as the consent includes the storage of cookies or access to information in the user's
+                1 TTDSG, insofar as the consent includes the storage of cookies or access to information in the user&apos;s
                 terminal device (e.g. device fingerprinting) as defined by the TTDSG. The consent can be revoked at any time.<br/><br/>
                 Our internal resources will only process your data to the extent necessary to fulfill their service
                 obligations and follow our instructions regarding this data.
@@ -402,7 +402,7 @@ export function iandpp() {
                 </Heading>
                 For security reasons and to protect the transmission of confidential content, such as orders or requests sent to
                 For example, orders or requests that you send to us as the site operator, SSL or TLS encryption. You can recognize an encrypted connection by the fact that the address line of the browser changes from
-                "http://" to "https://" and by the lock symbol in your browser line.
+                &quot;http://&quot; to &quot;https://&quot; and by the lock symbol in your browser line.
                 If SSL or TLS encryption is activated, the data you transmit to us cannot be read by third parties.
                 be read by third parties.
 
@@ -502,17 +502,17 @@ export function iandpp() {
                 This site uses for the uniform display of fonts so-called Google Fonts, which are provided by Google.
                 provided by Google. When you call up a page, your browser loads the required fonts into your browser cache,
                 in order to display texts and fonts correctly.<br/><br/>
-                For this purpose, the browser you are using must connect to Google's servers.
+                For this purpose, the browser you are using must connect to Google&apos;s servers.
                 servers. This enables Google to know that your IP address has been used to access this website.
                 was called up. The use of Google Fonts is based on Art. 6 para. 1 lit. f DSGVO. The
                 website operator has a legitimate interest in the uniform presentation of the typeface on its website.
                 website. Insofar as a corresponding consent has been requested, the processing is carried out exclusively
                 on the basis of Art. 6 para. 1 lit. a DSGVO and § 25 para. 1 TTDSG, insofar as the consent allows the storage of
-                of cookies or access to information in the user's terminal device (e.g. device fingerprinting) in the
+                of cookies or access to information in the user&apos;s terminal device (e.g. device fingerprinting) in the
                 within the meaning of the TTDSG. The consent can be revoked at any time.<br/><br/>
                 If your browser does not support Google Fonts, a standard font will be used by your computer.
                 You can find more information about Google Fonts at
-                <a href="https://developers.google.com/fonts/faq">https://developers.google.com/fonts/faq</a> and in Google's privacy policy:
+                <a href="https://developers.google.com/fonts/faq">https://developers.google.com/fonts/faq</a> and in Google&apos;s privacy policy:
                 <a href="https://policies.google.com/privacy?hl=de">https://policies.google.com/privacy?hl=de</a>.
               </div>
             </Section>

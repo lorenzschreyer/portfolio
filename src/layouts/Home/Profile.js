@@ -20,7 +20,7 @@ const ProfileText = ({ visible, titleId }) => (
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
         My name is Lorenz, a software developer from Germany and i am currently studying computer science
-        in the 6th semester at the <Link href="https://www.thi.de/">Technische Hochschule Ingolstadt</Link>.
+        in the 7th semester at the <Link href="https://www.thi.de/">Technische Hochschule Ingolstadt</Link>.
         Check out my <Link href="/uses">uses page</Link>, if you want to know more about the software and hardware i use.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">

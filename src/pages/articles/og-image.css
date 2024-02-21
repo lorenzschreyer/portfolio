@@ -1,23 +1,23 @@
 @font-face {
-  font-family: Gotham;
+  font-family: Montserrat;
   font-weight: 400;
-  src: url('../../assets/fonts/gotham-book.woff2') format('woff2');
+  src: url('../../assets/fonts/Montserrat-Regular.woff2') format('woff2');
   font-display: block;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Gotham;
+  font-family: Montserrat;
   font-weight: 500;
-  src: url('../../assets/fonts/gotham-medium.woff2') format('woff2');
+  src: url('../../assets/fonts/Montserrat-Medium.woff2') format('woff2');
   font-display: block;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Gotham;
+  font-family: Montserrat;
   font-weight: 700;
-  src: url('../../assets/fonts/gotham-bold.woff2') format('woff2');
+  src: url('../../assets/fonts/Montserrat-Bold.woff2') format('woff2');
   font-display: block;
   font-style: normal;
 }
@@ -27,7 +27,7 @@
   --rgbText: 255 255 255;
   --rgbPrimary: 0 205 172;
 
-  font-family: Gotham, system-ui;
+  font-family: Montserrat, system-ui;
   background-color: rgb(var(--rgbBackground));
   color: rgb(var(--rgbText));
 }

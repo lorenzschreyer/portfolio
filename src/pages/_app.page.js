@@ -18,9 +18,9 @@ import { ScrollRestore } from '../layouts/App/ScrollRestore';
 export const AppContext = createContext({});
 
 const repoPrompt = `
-__  __  __
-\u005C \u005C \u005C \u005C \u005C\u2215\n \u005C \u005C\u2215\u005C \u005C\n  \u005C\u2215  \u005C\u2215
-\n\nTaking a peek huh? Check out the source code: https://github.com/lorenzschreyer/portfolio
+Taking a peek huh? Check out the source code: https://github.com/lorenzschreyer/portfolio\n\n\n
+Check out Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.
+
 `;
 
 const App = ({ Component, pageProps }) => {

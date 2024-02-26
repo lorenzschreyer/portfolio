@@ -1,11 +1,11 @@
 import { Heading } from 'components/Heading';
 import { Meta } from 'components/Meta';
 import { Section } from 'components/Section';
-import { Text } from 'components/Text';
+// import { Text } from 'components/Text';
 import { Transition } from 'components/Transition';
 import { Fragment } from 'react';
 import styles from './iandpp.module.css';
-import {classes, cssProps} from "../../utils/style";
+import {classes} from "../../utils/style";
 
 export function iandpp() {
   return (

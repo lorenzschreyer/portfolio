@@ -7,8 +7,8 @@ import { Transition } from 'components/Transition';
 import { Fragment } from 'react';
 import styles from './qr.module.css';
 import { Section } from 'components/Section';
-import { ReactSVG } from 'react-svg';
-import Businesscard from 'assets/businesscard.svg';
+// import { ReactSVG } from 'react-svg';
+// import Businesscard from 'assets/businesscard.svg';
 import {classes} from "../../utils/style";
 
 export function Qr() {

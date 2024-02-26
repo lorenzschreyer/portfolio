@@ -19,6 +19,10 @@ import Whatsapp from './svg/whatapp.svg';
 import Twitter from './svg/twitter.svg';
 import Instagram from './svg/instagram.svg';
 import LinkedIn from './svg/linkedIn.svg';
+import Mail from './svg/mail.svg';
+import Location from './svg/location.svg';
+import Web from './svg/web.svg';
+import Phone from './svg/phone.svg';
 
 export const icons = {
   arrowLeft: ArrowLeft,
@@ -26,6 +30,10 @@ export const icons = {
   file: File,
   check: Check,
   chevronRight: ChevronRight,
+  mail: Mail,
+  location: Location,
+  web: Web,
+  phone: Phone,
   close: Close,
   copy: Copy,
   error: Error,

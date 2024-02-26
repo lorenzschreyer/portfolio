@@ -1,37 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1080 1080" enable-background="new 0 0 1080 1080" xml:space="preserve">
-<g id="Logogram_1_">
-	<g>
-		
-			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="373.8294" y1="1482.6069" x2="425.7767" y2="1177.8376" gradientTransform="matrix(0.7071 0.7071 0.4498 -0.4498 -174.5823 819.1263)">
-			<stop  offset="0" style="stop-color:#02AABD"/>
-			<stop  offset="1" style="stop-color:#00CDAC"/>
-		</linearGradient>
-		<path fill="url(#SVGID_1_)" d="M890.31,590.82L563.58,264.09c-7.81-7.81-20.47-7.81-28.28,0l-42.56,42.56
-			c-44.52,44.52-44.52,116.7,0,161.22l333.8,333.8c3.91,3.91,10.24,3.91,14.14,0l49.63-49.63
-			C934.83,707.52,934.83,635.34,890.31,590.82z"/>
-		
-			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="165.6294" y1="800.0797" x2="334.6674" y2="702.4855" gradientTransform="matrix(0 1 1 0 -266.8595 467.1239)">
-			<stop  offset="0" style="stop-color:#02AABD"/>
-			<stop  offset="1" style="stop-color:#00CDAC"/>
-		</linearGradient>
-		<path fill="url(#SVGID_2_)" d="M591.2,772.42v-92.31c0-11.05-8.95-20-20-20H399.94c-27.61,0-50,22.39-50,50v102.31
-			c0,5.52,4.48,10,10,10H541.2C568.81,822.42,591.2,800.04,591.2,772.42z"/>
-		
-			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-219.8159" y1="1211.2704" x2="-77.4427" y2="1129.0712" gradientTransform="matrix(0 1 1 0 -266.8595 467.1239)">
-			<stop  offset="0" style="stop-color:#02AABD"/>
-			<stop  offset="1" style="stop-color:#00CDAC"/>
-		</linearGradient>
-		<path fill="url(#SVGID_3_)" d="M972.94,369.61V277.3c0-11.05-8.95-20-20-20h-92.31c-27.61,0-50,22.39-50,50v102.31
-			c0,5.52,4.48,10,10,10h102.31C950.56,419.61,972.94,397.23,972.94,369.61z"/>
-		
-			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="163.5064" y1="1578.1534" x2="539.7323" y2="1919.6211" gradientTransform="matrix(-4.489600e-11 1 -0.6361 -2.855900e-11 1317.8008 190.1914)">
-			<stop  offset="0" style="stop-color:#02AABD"/>
-			<stop  offset="1" style="stop-color:#00CDAC"/>
-		</linearGradient>
-		<path fill="url(#SVGID_4_)" d="M107.06,708.7l0-431.09c0-11.05,8.95-20,20-20h60.19c62.96,0,114,51.04,114,114l0,441.09
-			c0,5.52-4.48,10-10,10l-70.19,0C158.1,822.7,107.06,771.66,107.06,708.7z"/>
-	</g>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="700.000000pt" height="700.000000pt" viewBox="0 0 700.000000 700.000000"
+ preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.14, written by Peter Selinger 2001-2017
+</metadata>
+<g transform="translate(0.000000,700.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M5559 5329 c-94 -8 -161 -41 -224 -111 -77 -85 -79 -101 -80 -523
+l-1 -370 23 -23 23 -23 383 3 382 3 59 30 c71 36 135 106 161 178 18 48 20 81
+20 402 0 472 33 435 -385 438 -157 1 -319 -1 -361 -4z"/>
+<path d="M764 5314 c-16 -8 -39 -29 -50 -47 -19 -31 -19 -63 -19 -1471 -1
+-1488 0 -1515 40 -1631 61 -177 201 -336 368 -417 146 -72 193 -78 531 -79
+264 0 280 1 299 19 19 20 19 43 19 1494 0 1064 -3 1490 -11 1535 -57 304 -280
+535 -581 597 -106 22 -551 23 -596 0z"/>
+<path d="M3514 5315 c-27 -11 -245 -221 -356 -344 -73 -80 -145 -222 -163
+-321 -3 -14 -7 -36 -10 -50 -3 -14 -6 -65 -6 -115 0 -144 44 -286 126 -410 38
+-57 2257 -2284 2278 -2286 39 -4 70 20 240 189 201 200 268 285 310 398 43
+116 50 155 50 279 -1 107 -4 131 -32 216 -59 182 -25 145 -1220 1340 -597 597
+-1096 1091 -1109 1098 -34 18 -74 20 -108 6z"/>
+<path d="M2578 2719 c-88 -7 -148 -33 -206 -87 -94 -90 -101 -120 -102 -430
+-2 -506 -2 -490 20 -512 20 -20 29 -21 663 -18 l642 3 54 28 c64 34 121 92
+153 155 23 47 23 50 23 418 0 358 -1 373 -20 394 -47 52 -38 51 -613 53 -295
+1 -572 -1 -614 -4z"/>
 </g>
 </svg>

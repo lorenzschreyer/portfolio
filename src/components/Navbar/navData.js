@@ -1,14 +1,14 @@
 export const navLinks = [
   {
-    label: 'Projects',
+    label: 'projects',
     pathname: '/#project-1',
   },
   {
-    label: 'Details',
+    label: 'details',
     pathname: '/#details',
   },
   {
-    label: 'Articles',
+    label: 'articles',
     pathname: '/articles',
   }
 ];

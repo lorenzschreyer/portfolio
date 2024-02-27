@@ -14,6 +14,7 @@ import { useState, useEffect } from 'react';
 import { formatDate } from 'utils/date';
 import { classes, cssProps } from 'utils/style';
 import styles from './Articles.module.css';
+import {useTranslation} from "react-i18next";
 
 const ArticlesPost = ({
   slug,
@@ -28,6 +29,7 @@ const ArticlesPost = ({
   const [hovered, setHovered] = useState(false);
   const [dateTime, setDateTime] = useState(null);
   const reduceMotion = useReducedMotion();
+  const { t } = useTranslation();
 
   useEffect(() => {
     setDateTime(formatDate(date));
@@ -49,7 +51,7 @@ const ArticlesPost = ({
     >
       {featured && (
         <Text className={styles.postLabel} size="s">
-          Featured
+          {t('featured')}
         </Text>
       )}
       {featured && !!banner && (
@@ -84,7 +86,7 @@ const ArticlesPost = ({
           </Text>
           <div className={styles.postFooter}>
             <Button secondary iconHoverShift icon="chevronRight" as="div">
-              Read article
+              {t('read_article')}
             </Button>
             <Text className={styles.timecode} size="s">
               {timecode}
@@ -95,7 +97,7 @@ const ArticlesPost = ({
       </RouterLink>
       {featured && (
         <Text aria-hidden className={styles.postTag} size="s">
-          477
+          {t('featured_extra')}
         </Text>
       )}
     </article>
@@ -103,6 +105,8 @@ const ArticlesPost = ({
 };
 
 const SkeletonPost = ({ index }) => {
+  const { t } = useTranslation();
+
   return (
     <article
       aria-hidden="true"
@@ -113,7 +117,7 @@ const SkeletonPost = ({ index }) => {
         <div className={styles.postDetails}>
           <div aria-hidden className={styles.postDate}>
             <Divider notchWidth="64px" notchHeight="8px" />
-            Coming soon...
+            {t('coming_soon')}
           </div>
           <Heading
             className={styles.skeletonBone}
@@ -129,7 +133,7 @@ const SkeletonPost = ({ index }) => {
           />
           <div className={styles.postFooter}>
             <Button secondary iconHoverShift icon="chevronRight" as="div">
-              Read more
+              {t('read_more')}
             </Button>
             <Text className={styles.timecode} size="s">
               00:00:00:00
@@ -142,6 +146,7 @@ const SkeletonPost = ({ index }) => {
 };
 
 export const Articles = ({ posts, featured }) => {
+  const { t } = useTranslation();
   const { width } = useWindowSize();
   const singleColumnWidth = 1190;
   const isSingleColumn = width <= singleColumnWidth;
@@ -149,7 +154,7 @@ export const Articles = ({ posts, featured }) => {
   const postsHeader = (
     <header className={styles.header}>
       <Heading className={styles.heading} level={5} as="h1">
-        <DecoderText text="Latest articles" />
+        <DecoderText text={t('articles_latest')} />
       </Heading>
     </header>
   );
@@ -173,8 +178,8 @@ export const Articles = ({ posts, featured }) => {
   return (
     <article className={styles.articles}>
       <Meta
-        title="Articles"
-        description="A collection of technical design and development articles. May contain incoherent ramblings."
+        title={t('articles_title')}
+        description={t('articles_description')}
       />
       <Section className={styles.content}>
         {!isSingleColumn && (
@@ -191,7 +196,7 @@ export const Articles = ({ posts, featured }) => {
           </div>
         )}
       </Section>
-      <Footer />
+      <Footer iandpp_name={t('iandpp_name')}/>
     </article>
   );
 };

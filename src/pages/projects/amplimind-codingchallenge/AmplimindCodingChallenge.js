@@ -22,15 +22,15 @@ import styles from './AmplimindCodingChallenge.module.css';
 import {Button} from "../../../components/Button";
 import {Table, TableBody, TableCell, TableHeadCell, TableRow} from "../../../components/Table";
 
-const title = 'coding challenge platform for amplimind';
-const description =
-  'This project involved implementation of an open-source platform to facilitate the application process of software companies.';
+import { useTranslation } from "react-i18next";
+
 const roles = ['Django Backend Development', 'GithubApi Integration', 'Test Implementation', ];
 
 export const AmplimindCodingChallenge = () => {
+  const { t } = useTranslation();
   return (
     <Fragment>
-      <Meta title={title} prefix="Projects" description={description} />
+      <Meta title={t('project1_title')} prefix="Projects" description={t('project1_description')} />
       <ProjectContainer className={styles.slice}>
         <ProjectBackground
           src={codingChallengeCode}
@@ -39,9 +39,9 @@ export const AmplimindCodingChallenge = () => {
           opacity={0.8}
         />
         <ProjectHeader
-          title={title}
-          description={description}
-          linkLabel="Visit amplimind"
+          title={t('project1_title')}
+          description={t('project1_description')}
+          linkLabel="amplimind"
           url="https://www.amplimind.io"
           roles={roles}
         />
@@ -49,10 +49,10 @@ export const AmplimindCodingChallenge = () => {
           secondary
           iconHoverShift
           className={styles.linkButton}
-          icon="chevronRight"
+          icon="github"
           href="https://github.com/ampcc/coding-challenge"
         >
-          View on Github
+          {t('view_on_github')}
         </Button>
         <ProjectSection padding="top">
           <ProjectSectionContent>
@@ -66,31 +66,25 @@ export const AmplimindCodingChallenge = () => {
         </ProjectSection>
         <ProjectSection padding="bottom">
           <ProjectSectionContent>
-            <ProjectSectionHeading>The vision</ProjectSectionHeading>
+            <ProjectSectionHeading>{t('project1_vision')}</ProjectSectionHeading>
             <ProjectSectionText>
-              As a team of 12 computer science students,
-              we were assigned a project under the supervision of
-              amplimind to improve the application process at the company software supported.
-              Despite the business use at said company, the project is kept <b>open source</b>.
+              {t('project1_vision_desc')}
+
             </ProjectSectionText>
           </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection light>
           <ProjectSectionContent>
-            <ProjectSectionHeading>The approach</ProjectSectionHeading>
+            <ProjectSectionHeading>{t('project1_approach')}</ProjectSectionHeading>
             <ProjectSectionText>
-              Our approach was primarily a one-time link that is sent to
-              selected applicants and thus no <b>personal</b> data and passwords have to be stored and transmitted.
-
-              After the link is opened, the user must confirm the start of a challenge,
-              is given a certain amount of time to complete and last has the possibility to upload a solution.
-              The uploaded files are transferred to a <b>Github Repository</b> where they are checked and linted by an <b>Github Action</b>.
+              {t('project1_approach_desc')}
+              {/*<span dangerouslySetInnerHTML={{__html: I18n.t('my_translation')}} ></span>*/}
             </ProjectSectionText>
           </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection>
           <ProjectSectionContent>
-            <ProjectSectionHeading>Architecture and technologies</ProjectSectionHeading>
+            <ProjectSectionHeading>{t('architecture_technologies')}</ProjectSectionHeading>
             <Table>
               <TableBody>
                 <TableRow>
@@ -205,7 +199,7 @@ export const AmplimindCodingChallenge = () => {
     {/*      </ProjectSectionContent>*/}
     {/*    </ProjectSection>*/}
       </ProjectContainer>
-      <Footer />
+      <Footer iandpp_name={t('iandpp_name')}/>
     </Fragment>
   );
 };

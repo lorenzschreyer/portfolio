@@ -17,13 +17,16 @@ import {
 } from 'layouts/Project';
 import { Fragment } from 'react';
 import styles from './Uses.module.css';
+import {useTranslation} from "react-i18next";
 
 export const Uses = () => {
+  const { t } = useTranslation();
+
   return (
     <Fragment>
       <Meta
-        title="Uses"
-        description="A list of hardware and software I use to do my thing"
+        title={t('toolbox_title')}
+        description={t('toolbox_description')}
       />
       <ProjectContainer className={styles.uses}>
         <ProjectBackground
@@ -32,40 +35,36 @@ export const Uses = () => {
           opacity={0.7}
         />
         <ProjectHeader
-          title="Uses"
-          description="The hardware and software that I use to implement projects in the best possible way"
-          linkLabel="Video by Crista Dina"
+          title={t('toolbox_title')}
+          description={t('toolbox_description')}
+          linkLabel={t('video_by') + " Dina"}
           url="https://www.pexels.com/video/person-working-on-his-laptop-1851768/"
         />
 
         <ProjectSection padding="none" className={styles.section}>
           <ProjectSectionContent>
             <ProjectTextRow width="m">
-              <ProjectSectionHeading>Development</ProjectSectionHeading>
+              <ProjectSectionHeading>{t('toolbox_dev')}</ProjectSectionHeading>
               <ProjectSectionText as="div">
                 <List>
                   <ListItem>
-                    I use almost all Products from{' '}
+                    {t('toolbox_dev_desc1')}
                     <Link href="https://www.jetbrains.com/">Jet Brains</Link>.
-                    Therefore, the most efficient working methods with IntelliJ, PyCharm,
-                    PhpStorm and C-Lion are well known to me.
+                    {t('toolbox_dev_desc2')}
                   </ListItem>
                   <ListItem>
-                    I especially like the &quot;Code with me&quot; feature of Jet Brains Products,
-                    because it allows to work together even more efficiently and better.
+                    {t('toolbox_dev_desc3')}
                   </ListItem>
                   <ListItem>
-                    I am a big fan of platform independence, but if I had to choose one it would be Mac OSX.
+                    {t('toolbox_dev_desc4')}
                   </ListItem>
                   <ListItem>
-                    My front and back end of choice depends on the project to be implemented.
-                    The various advantages and disadvantages must be coordinated individually.
-                    So it can also be that I write a frontend in plain html, css and javascript.
+                    {t('toolbox_dev_desc5')}
                   </ListItem>
                   <ListItem>
-                    The programming language I like to work with and make my everyday life easier is {' '}
+                    {t('toolbox_dev_desc6')}
                     <Link href='https://www.python.org/'>Python</Link>,
-                    but I know all other common programming languages and I know the benefits and downsides of them.
+                    {t('toolbox_dev_desc7')}
                   </ListItem>
                 </List>
               </ProjectSectionText>
@@ -75,21 +74,23 @@ export const Uses = () => {
         <ProjectSection padding="none" className={styles.section}>
           <ProjectSectionContent>
             <ProjectTextRow width="m">
-              <ProjectSectionHeading>Design</ProjectSectionHeading>
+              <ProjectSectionHeading>{t('toolbox_design')}</ProjectSectionHeading>
               <ProjectSectionText as="div">
                 <List>
                   <ListItem>
-                    Graphics I usually make with
-                    {' '}<Link href='https://www.adobe.com/de/products/illustrator.html'>Adobe Illustrator</Link>.
+                    {t('toolbox_design_desc1')}
+                    <Link href='https://www.adobe.com/de/products/illustrator.html'>Adobe Illustrator</Link>.
                   </ListItem>
                   <ListItem>
-                    For editing and adjusting images I use {' '}
+                    {t('toolbox_design_desc2')}
                     <Link href='https://www.adobe.com/de/products/photoshop.html'>Adobe Photoshop</Link>.
                   </ListItem>
                   <ListItem>
-                    I create print media with {' '} <Link href='https://www.adobe.com/de/products/indesign.html'>In Design</Link> {' '}
-                    and then have them printed by {' '} <Link href='https://www.flyeralarm.com/'>Flyeralarm</Link>,
-                    because I am familiar with their finishes, paper thicknesses and paper types.
+                    {t('toolbox_design_desc3')}
+                    <Link href='https://www.adobe.com/de/products/indesign.html'>In Design</Link>
+                    {t('toolbox_design_desc4')}
+                    <Link href='https://www.flyeralarm.com/'>Flyeralarm</Link>,
+                    {t('toolbox_design_desc5')}
                   </ListItem>
                 </List>
               </ProjectSectionText>
@@ -148,7 +149,7 @@ export const Uses = () => {
           </ProjectSectionContent>
         </ProjectSection>
       </ProjectContainer>
-      <Footer />
+      <Footer iandpp_name={t('iandpp_name')}/>
     </Fragment>
   );
 };

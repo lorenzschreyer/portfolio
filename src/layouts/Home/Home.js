@@ -1,3 +1,5 @@
+// noinspection ES6UnusedImports
+
 import codingChallengeLarge from 'assets/coding-challenge-title-large.png';
 import codingChallengePlaceholder from 'assets/coding-challenge-title-placeholder.png';
 import codingChallenge from 'assets/coding-challenge-title.png';
@@ -13,8 +15,11 @@ import styles from './Home.module.css';
 import {socialLinks} from "../../components/Navbar/navData";
 import {Button} from "../../components/Button";
 import {Section} from "../../components/Section";
+import { useTranslation } from "react-i18next";
 
-const disciplines = ['{ Developer }', '< Architect >', '« Designer »', '❝ Tester ❞', '[ Security ]'];
+
+// const disciplines = ['{ Developer }', '< Architect >', '« Designer »', '❝ Tester ❞', '[ Security ]'];
+
 
 export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
@@ -23,6 +28,9 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const details = useRef();
+
+  const { t } = useTranslation();
+  const disciplines = [t('developer'), t('architect'), t('designer'), t('tester'), t('security')];
 
   useEffect(() => {
     const sections = [intro, projectOne, projectTwo, details];
@@ -63,8 +71,8 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <Meta
-        title="Software"
-        description="Developer portfolio of Lorenz Schreyer"
+        // title="Software"
+        description="Portfolio - Lorenz Schreyer"
       />
       <Intro
         id="intro"
@@ -75,7 +83,7 @@ export const Home = () => {
       <Section>
         <div className={styles.cvButton}>
           <Button iconHoverShift href={"/cv-english.pdf"} iconEnd="file">
-            Download CV
+            {t('download_cv')}
           </Button>
         </div>
       </Section>
@@ -85,9 +93,9 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="coding challenge platform for amplimind"
-        description="Implementing an open-source platform to facilitate the application process of software companies."
-        buttonText="View project"
+        title={t('project1_title')}
+        description={t('project1_description')}
+        buttonText={t('project1_buttonText')}
         buttonLink="/projects/amplimind-codingchallenge"
         model={{
           type: 'laptop',
@@ -107,9 +115,9 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Solar Monitor for a solar system"
-        description="Development of an animated website to expose solar status of the inverter"
-        buttonText="View on Github"
+        title={t('project2_title')}
+        description={t('project2_description')}
+        buttonText={t('project2_buttonText')}
         buttonLink={socialLinks[2].url + "/solarMonitor"}
         model={{
           type: 'phone',
@@ -157,7 +165,7 @@ export const Home = () => {
         visible={visibleSections.includes(details.current)}
         id="details"
       />
-      <Footer />
+      <Footer iandpp_name={t('iandpp_name')}/>
     </div>
   );
 };

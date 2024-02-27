@@ -1,5 +1,5 @@
 import { Button } from 'components/Button';
-import { DecoderText } from 'components/DecoderText';
+// import { DecoderText } from 'components/DecoderText';
 import { Heading } from 'components/Heading';
 import { Meta } from 'components/Meta';
 import { Text } from 'components/Text';
@@ -10,13 +10,16 @@ import { Section } from 'components/Section';
 // import { ReactSVG } from 'react-svg';
 // import Businesscard from 'assets/businesscard.svg';
 import {classes} from "../../utils/style";
+import {useTranslation} from "react-i18next";
 
 export function Qr() {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.page}>
       <Meta
-        title="QR-Code"
-        description="QR-Code Landing page from businesscard"
+        title={t('qr_title')}
+        description={t('qr_description')}
       />
       <Transition in>
         {visible => (
@@ -29,19 +32,11 @@ export function Qr() {
                   level={0}
                   weight="bold"
                 >
-                  Digital Business Card
+                  {t('qr_bc_title')}
                 </Heading>
-                <Heading
-                  aria-hidden
-                  className={styles.subheading}
-                  data-visible={visible}
-                  as="h2"
-                  level={3}
-                >
 
-                </Heading>
-                <Text className={styles.description} data-visible={visible} as="p">
-                  <DecoderText text="Just click on the information on the business card to contact me" start={visible} delay={300} />
+                <Text className={styles.description} as="p">
+                  {t('qr_bc_click')}
                 </Text>
                 <div className={styles.buttons}>
                   <Button
@@ -52,7 +47,7 @@ export function Qr() {
                     href="https://www.google.com/maps/dir//Hauptstra%C3%9Fe%2057,%2085309%20Puch"
                     icon="location"
                   >
-                    navigate to me
+                    {t('qr_bc_click_nav')}
                   </Button>
                   <Button
                     primary
@@ -62,7 +57,7 @@ export function Qr() {
                     href="tel:+4917634285299"
                     icon="phone"
                   >
-                    call me
+                    {t('qr_bc_click_call')}
                   </Button>
                   <Button
                     primary
@@ -72,7 +67,7 @@ export function Qr() {
                     href="mailto:dev@lorenzschreyer.de"
                     icon="mail"
                   >
-                    send mail
+                    {t('qr_bc_click_mail')}
                   </Button>
                   <Button
                     primary
@@ -82,7 +77,7 @@ export function Qr() {
                     href="https://lorenzschreyer.de"
                     icon="web"
                   >
-                    visit Homepage
+                    {t('qr_bc_click_home')}
                   </Button>
 
                 </div>

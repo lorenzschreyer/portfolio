@@ -12,25 +12,26 @@ import {Text} from 'components/Text';
 import {Transition} from 'components/Transition';
 import {Fragment, useState} from 'react';
 import styles from './Profile.module.css';
+import { useTranslation } from "react-i18next";
 
-const ProfileText = ({ visible, titleId }) => (
+const ProfileText = ({ visible, titleId, t }) => (
   <Fragment>
     <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Hey there," start={visible} delay={500} />
+      <DecoderText text={t('profile_hello')} start={visible} delay={500} />
     </Heading>
+    {/*<Text className={styles.description} data-visible={visible} size="l" as="p">*/}
+    {/*    My name is Lorenz, a software developer from Germany and i am currently studying computer science*/}
+    {/*    in the 7th semester at the <Link href="https://www.thi.de/">Technische Hochschule Ingolstadt</Link>.*/}
+    {/*    Check out my <Link >uses page</Link>, if you want to know more about the software and hardware i use.*/}
+    {/*</Text>*/}
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-        My name is Lorenz, a software developer from Germany and i am currently studying computer science
-        in the 7th semester at the <Link href="https://www.thi.de/">Technische Hochschule Ingolstadt</Link>.
-        Check out my <Link href="/uses">uses page</Link>, if you want to know more about the software and hardware i use.
+      {t('profile_1')}
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-        Besides my passion for programming, i like to take photos and edit them, or do sports.
-        I am interested in many areas of computer science, which makes me never stop learning.
-        One of my principles is a very good quote:
+      {t('profile_2')}
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-        «Simplicity is prerequisite for reliability.» <br/>
-        ― Edsger W. Dijkstra
+      {t('profile_3')}
     </Text>
   </Fragment>
 );
@@ -38,6 +39,7 @@ const ProfileText = ({ visible, titleId }) => (
 export const Profile = ({ id, visible, sectionRef }) => {
   const [focused, setFocused] = useState(false);
   const titleId = `${id}-title`;
+  const { t } = useTranslation();
 
   return (
     <Section
@@ -54,7 +56,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
         {visible => (
           <div className={styles.content}>
             <div className={styles.column}>
-              <ProfileText visible={visible} titleId={titleId} />
+              <ProfileText visible={visible} titleId={titleId} t={t} />
             </div>
             <div className={styles.column}>
               <div className={styles.tag} aria-hidden>
@@ -65,7 +67,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                  About Me
+                  {t('about_me')}
                 </div>
               </div>
               <div className={styles.image}>
@@ -78,15 +80,21 @@ export const Profile = ({ id, visible, sectionRef }) => {
                 />
               </div>
               <div className={styles.contactButtons}>
+
+                <Link href="/uses">{t("uses_page")}</Link>
+                <Link href="/qr">{t("bc_page")}</Link>
+                <br/>
+                {t('contact')}
+
                 <Button
                   secondary
                   className={styles.button}
                   data-visible={visible}
 
                   href="mailto:dev@lorenzschreyer.de"
-                  icon="send"
+                  icon="mail"
                 >
-                  Write me an email
+                  {t('per_email')}
                 </Button>
                 <Button
                   secondary
@@ -95,7 +103,16 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   href="https://wa.me/4917634285299"
                   icon="whatsapp"
                 >
-                  or a whatsapp
+                  {t('per_whatsapp')}
+                </Button>
+                <Button
+                  secondary
+                  className={styles.button}
+                  data-visible={visible}
+                  href="tel:+4917634285299"
+                  icon="phone"
+                >
+                  {t('per_call')}
                 </Button>
               </div>
             </div>

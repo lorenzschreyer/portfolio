@@ -9,7 +9,13 @@ import { Transition } from 'components/Transition';
 import { Fragment } from 'react';
 import styles from './404.module.css';
 
+import { useTranslation } from "react-i18next";
+
+
+
 export function Page404() {
+  const { i18n, t } = useTranslation();
+
   return (
     <section className={styles.page}>
       <Meta
@@ -36,11 +42,11 @@ export function Page404() {
                   as="h2"
                   level={3}
                 >
-                  <DecoderText text="Error: Not Found" start={visible} delay={300} />
+                  <DecoderText text={t('error_title')} start={visible} delay={300} />
                 </Heading>
                 <Text className={styles.description} data-visible={visible} as="p">
-                  The page you were looking for does not exist, unless you wanted to see this beautiful 404 page with a &quot;Matrix-Code&quot; like animation.
-                  Then you are in the right place
+                  {t('error_caption')}
+
                 </Text>
                 <Button
                   secondary
@@ -50,7 +56,7 @@ export function Page404() {
                   href="/"
                   icon="chevronRight"
                 >
-                  Back to homepage
+                  {t('error_back')}
                 </Button>
               </div>
             </div>

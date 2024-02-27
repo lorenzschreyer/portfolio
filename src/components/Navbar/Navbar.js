@@ -11,7 +11,9 @@ import { cssProps, media, msToNum, numToMs } from 'utils/style';
 import { NavToggle } from './NavToggle';
 import styles from './Navbar.module.css';
 import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
 import { navLinks, socialLinks } from './navData';
+import {useTranslation} from "react-i18next";
 
 export const Navbar = () => {
   const [current, setCurrent] = useState();
@@ -139,6 +141,8 @@ export const Navbar = () => {
     if (menuOpen) dispatch({ type: 'toggleMenu' });
   };
 
+  const { t } = useTranslation();
+
   return (
     <header className={styles.navbar} ref={headerRef}>
       <RouterLink
@@ -165,7 +169,7 @@ export const Navbar = () => {
               aria-current={getCurrent(pathname)}
               onClick={handleNavItemClick}>
 
-              {label}
+              {t(label)}
 
             </RouterLink>)
           ))}
@@ -190,16 +194,18 @@ export const Navbar = () => {
                   ),
                 })}>
 
-                {label}
+                {t(label)}
 
               </RouterLink>)
             ))}
             <NavbarIcons />
             <ThemeToggle isMobile />
+            <LanguageToggle isMobile/>
           </nav>
         )}
       </Transition>
       {!isMobile && <ThemeToggle data-navbar-item />}
+      {!isMobile && <LanguageToggle data-navbar-item />}
     </header>
   );
 };

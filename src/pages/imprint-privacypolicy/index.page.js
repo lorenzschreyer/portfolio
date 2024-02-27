@@ -1,1 +1,1 @@
-export { iandpp as default } from './iandpp';
+export { Iandpp as default } from './Iandpp';

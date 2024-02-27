@@ -12,6 +12,7 @@ import { POSTS_PATH, postFilePaths } from 'utils/mdx';
 import { formatTimecode } from 'utils/timecode';
 import rehypePrism from '@mapbox/rehype-prism';
 import { generateOgImage } from './og-image';
+import {useTranslation} from "react-i18next";
 
 export default function PostPage({ frontmatter, code, timecode, ogImage }) {
   const MDXComponent = useMemo(() => getMDXComponent(code), [code]);

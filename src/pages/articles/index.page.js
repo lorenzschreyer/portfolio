@@ -22,16 +22,14 @@ export function getStaticProps() {
     };
   });
 
-  const featured = allPosts.find(post => post.featured);
+  const featured_en = allPosts.filter(post => post.slug.endsWith("en")).find(post => post.featured);
+  const featured_de = allPosts.filter(post => post.slug.endsWith("de")).find(post => post.featured);
 
   const posts = allPosts
-    .filter(post => post.slug !== featured.slug)
-    .sort((a, b) => {
-      return new Date(a.date).getTime() - new Date(b.date).getTime();
-    })
-    .reverse();
+    .filter(post => post.slug !== featured_en.slug && post.slug !== featured_de.slug)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return {
-    props: { posts, featured },
+    props: { posts, featured_en, featured_de },
   };
 }

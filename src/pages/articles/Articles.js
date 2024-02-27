@@ -145,8 +145,8 @@ const SkeletonPost = ({ index }) => {
   );
 };
 
-export const Articles = ({ posts, featured }) => {
-  const { t } = useTranslation();
+export const Articles = ({ posts, featured_en, featured_de }) => {
+  const { i18n, t } = useTranslation();
   const { width } = useWindowSize();
   const singleColumnWidth = 1190;
   const isSingleColumn = width <= singleColumnWidth;
@@ -162,7 +162,7 @@ export const Articles = ({ posts, featured }) => {
   const postList = (
     <div className={styles.list}>
       {!isSingleColumn && postsHeader}
-      {posts.map(({ slug, ...post }, index) => (
+      {posts.filter(post => post.slug.endsWith(i18n.language)).map(({ slug, ...post }, index) => (
         <ArticlesPost key={slug} slug={slug} index={index} {...post} />
       ))}
       {Array(2)
@@ -173,7 +173,11 @@ export const Articles = ({ posts, featured }) => {
     </div>
   );
 
-  const featuredPost = <ArticlesPost {...featured} />;
+  const featuredPosten =
+    <ArticlesPost {...featured_en} />;
+
+  const featuredPostde =
+    <ArticlesPost {...featured_de} />;
 
   return (
     <article className={styles.articles}>
@@ -185,13 +189,13 @@ export const Articles = ({ posts, featured }) => {
         {!isSingleColumn && (
           <div className={styles.grid}>
             {postList}
-            {featuredPost}
+            {i18n.language==="en" ? featuredPosten : featuredPostde}
           </div>
         )}
         {isSingleColumn && (
           <div className={styles.grid}>
             {postsHeader}
-            {featuredPost}
+            {/*{i18n.language==="en" ? featuredPosten : featuredPostde}*/}
             {postList}
           </div>
         )}

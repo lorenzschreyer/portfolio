@@ -5,6 +5,9 @@ import codingChallengePlaceholder from 'assets/coding-challenge-title-placeholde
 import codingChallenge from 'assets/coding-challenge-title.png';
 import solarMonitorMobile from 'assets/solar-monitor-mobile.png';
 import solarMonitorMobilePlaceholder from 'assets/solar-monitor-mobile-placeholder.png';
+import smartLB from 'assets/smart-light-button.png';
+import smartLBLarge from 'assets/smart-light-button-large.png';
+import smartLBPlaceholder from 'assets/smart-light-button-placeholder.png';
 import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
 import { Intro } from 'layouts/Home/Intro';
@@ -27,13 +30,14 @@ export const Home = () => {
   const intro = useRef();
   const projectOne = useRef();
   const projectTwo = useRef();
+  const projectThree = useRef();
   const details = useRef();
 
   const { t } = useTranslation();
   const disciplines = [t('developer'), t('architect'), t('designer'), t('tester'), t('security')];
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -129,37 +133,27 @@ export const Home = () => {
             },
           ]
         }}
-        // model={{
-        //     type: 'laptop',
-        //     alt: 'solar monitor schreyer',
-        //     textures: [
-        //       {
-        //         srcSet: [codingChallengePlaceholder, codingChallengePlaceholder],
-        //         placeholder: codingChallengePlaceholder,
-        //       },
-        //     ],
-        //   }}
       />
-      {/*<ProjectSummary*/}
-      {/*  id="project-3"*/}
-      {/*  sectionRef={projectThree}*/}
-      {/*  visible={visibleSections.includes(projectThree.current)}*/}
-      {/*  index={3}*/}
-      {/*  title="Biomedical image collaboration"*/}
-      {/*  description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"*/}
-      {/*  buttonText="View project"*/}
-      {/*  buttonLink="/projects/slice"*/}
-      {/*  model={{*/}
-      {/*    type: 'laptop',*/}
-      {/*    alt: 'Annotating a biomedical image in the Slice app',*/}
-      {/*    textures: [*/}
-      {/*      {*/}
-      {/*        srcSet: [sliceTexture, sliceTextureLarge],*/}
-      {/*        placeholder: sliceTexturePlaceholder,*/}
-      {/*      },*/}
-      {/*    ],*/}
-      {/*  }}*/}
-      {/*/>*/}
+      <ProjectSummary
+        id="project-3"
+        sectionRef={projectThree}
+        visible={visibleSections.includes(projectThree.current)}
+        index={3}
+        title={t('project3_title')}
+        description={t('project3_description')}
+        buttonText={t('project1_buttonText')}
+        buttonLink="/projects/smart-light-button"
+        model={{
+          type: 'laptop',
+          alt: 'smart-light-button',
+          textures: [
+            {
+              srcSet: [smartLB, smartLBLarge],
+              placeholder: smartLBPlaceholder,
+            },
+          ],
+        }}
+      />
       <Profile
         sectionRef={details}
         visible={visibleSections.includes(details.current)}

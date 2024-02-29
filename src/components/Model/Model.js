@@ -19,13 +19,13 @@ import {
   MeshDepthMaterial,
   OrthographicCamera,
   PerspectiveCamera,
-  PlaneBufferGeometry,
+  PlaneGeometry,
+  SRGBColorSpace,
   Scene,
   ShaderMaterial,
   Vector3,
   WebGLRenderTarget,
   WebGLRenderer,
-  sRGBEncoding,
 } from 'three';
 import { HorizontalBlurShader, VerticalBlurShader } from 'three-stdlib';
 import { resolveSrcFromSrcSet } from 'utils/image';
@@ -37,8 +37,10 @@ import {
   removeLights,
   textureLoader,
 } from 'utils/three';
+import {throttle} from "utils/throttle";
 import styles from './Model.module.css';
 import { ModelAnimationType } from './deviceModels';
+
 
 const MeshType = {
   Frame: 'Frame',
@@ -47,8 +49,8 @@ const MeshType = {
 };
 
 const rotationSpringConfig = {
-  stiffness: 40,
-  damping: 20,
+  stiffness: 200,
+  damping: 10,
   mass: 1.4,
   restSpeed: 0.001,
 };
@@ -99,8 +101,8 @@ export const Model = ({
 
     renderer.current.setPixelRatio(2);
     renderer.current.setSize(clientWidth, clientHeight);
-    renderer.current.outputEncoding = sRGBEncoding;
-    renderer.current.physicallyCorrectLights = true;
+    renderer.current.outputEncoding = SRGBColorSpace;
+    // renderer.current.physicallyCorrectLights = true;
 
     camera.current = new PerspectiveCamera(36, clientWidth / clientHeight, 0.1, 100);
     camera.current.position.set(cameraPosition.x, cameraPosition.y, cameraPosition.z);
@@ -141,7 +143,7 @@ export const Model = ({
     renderTargetBlur.current.texture.generateMipmaps = false;
 
     // Make a plane and make it face up
-    const planeGeometry = new PlaneBufferGeometry(planeWidth, planeHeight).rotateX(
+    const planeGeometry = new PlaneGeometry(planeWidth, planeHeight).rotateX(
       Math.PI / 2
     );
 
@@ -282,7 +284,7 @@ export const Model = ({
 
   // Handle mouse move animation
   useEffect(() => {
-    const onMouseMove = event => {
+    const onMouseMove = throttle(event => {
       const { innerWidth, innerHeight } = window;
 
       const position = {
@@ -292,7 +294,8 @@ export const Model = ({
 
       rotationY.set(position.x / 2);
       rotationX.set(position.y / 2);
-    };
+      console.log(position.x ,position.y );
+    }, 100);
 
     if (isInViewport && !reduceMotion) {
       window.addEventListener('mousemove', onMouseMove);
@@ -369,7 +372,7 @@ const Device = ({
 
   useEffect(() => {
     const applyScreenTexture = async (texture, node) => {
-      texture.encoding = sRGBEncoding;
+      texture.encoding = SRGBColorSpace;
       texture.flipY = false;
       texture.anisotropy = renderer.current.capabilities.getMaxAnisotropy();
       texture.generateMipmaps = false;
@@ -377,7 +380,7 @@ const Device = ({
       // Decode the texture to prevent jank on first render
       await renderer.current.initTexture(texture);
 
-      node.material.color = new Color(0xffffff);
+      node.material.color = new Color(0x555555);
       node.material.transparent = true;
       node.material.map = texture;
     };

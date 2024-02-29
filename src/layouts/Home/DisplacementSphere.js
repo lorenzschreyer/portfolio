@@ -5,28 +5,35 @@ import { useInViewport, useWindowSize } from 'hooks';
 import { startTransition, useEffect, useRef } from 'react';
 import {
   AmbientLight,
-  Color,
   DirectionalLight,
+  LinearSRGBColorSpace,
   Mesh,
   MeshPhongMaterial,
   PerspectiveCamera,
   Scene,
-  SphereBufferGeometry,
+  SphereGeometry,
   UniformsUtils,
   Vector2,
   WebGLRenderer,
-  sRGBEncoding,
 } from 'three';
-import { media, rgbToThreeColor } from 'utils/style';
+import { media } from 'utils/style';
+import { throttle } from 'utils/throttle';
 import { cleanRenderer, cleanScene, removeLights } from 'utils/three';
 import styles from './DisplacementSphere.module.css';
 import fragShader from './displacementSphereFragment.glsl';
 import vertShader from './displacementSphereVertex.glsl';
 
+// const springConfig = {
+//   stiffness: 30,
+//   damping: 20,
+//   mass: 2,
+// };
+
 const springConfig = {
-  stiffness: 30,
-  damping: 20,
+  stiffness: 40,
+  damping: 5,
   mass: 2,
+  restSpeed: 0.01,
 };
 
 export const DisplacementSphere = props => {
@@ -61,7 +68,7 @@ export const DisplacementSphere = props => {
     });
     renderer.current.setSize(innerWidth, innerHeight);
     renderer.current.setPixelRatio(1);
-    renderer.current.outputEncoding = sRGBEncoding;
+    renderer.current.outputEncoding = LinearSRGBColorSpace;
 
     camera.current = new PerspectiveCamera(54, innerWidth / innerHeight, 0.1, 100);
     camera.current.position.z = 52;
@@ -81,7 +88,7 @@ export const DisplacementSphere = props => {
     };
 
     startTransition(() => {
-      geometry.current = new SphereBufferGeometry(32, 128, 128);
+      geometry.current = new SphereGeometry(32, 128, 128);
       sphere.current = new Mesh(geometry.current, material.current);
       sphere.current.position.z = 0;
       sphere.current.modifier = Math.random();
@@ -103,7 +110,7 @@ export const DisplacementSphere = props => {
     dirLight.position.y = 100;
 
     lights.current = [dirLight, ambientLight];
-    scene.current.background = new Color(...rgbToThreeColor(rgbBackground));
+    // scene.current.background = new Color(...rgbToThreeColor(rgbBackground));
     lights.current.forEach(light => scene.current.add(light));
 
     return () => {
@@ -137,7 +144,7 @@ export const DisplacementSphere = props => {
   }, [reduceMotion, windowSize]);
 
   useEffect(() => {
-    const onMouseMove = event => {
+    const onMouseMove = throttle(event => {
       const position = {
         x: event.clientX / window.innerWidth,
         y: event.clientY / window.innerHeight,
@@ -145,7 +152,7 @@ export const DisplacementSphere = props => {
 
       rotationX.set(position.y / 2);
       rotationY.set(position.x / 2);
-    };
+    }, 100);
 
     if (!reduceMotion && isInViewport) {
       window.addEventListener('mousemove', onMouseMove);

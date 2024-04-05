@@ -64,7 +64,7 @@ export const Iandpp = () => {
                 >
                   {t('imprint_taxid')}
                 </Heading>
-            
+                {t('imprint_registration_desc')} <br/>
                 DE366775338
 
                 <Heading

@@ -56,16 +56,16 @@ export const Iandpp = () => {
                 Tel: +49 176 34285299<br/>
                 E-Mail: dev@lorenzschreyer.de
 
-                {/*<Heading*/}
-                {/*  className={classes(styles.title)}*/}
-                {/*  data-visible={true}*/}
-                {/*  level={3}*/}
-                {/*  weight="bold"*/}
-                {/*>*/}
-                {/*  {t('imprint_taxid')}*/}
-                {/*</Heading>*/}
-                {/*{t('imprint_taxid_desc')}<br/>*/}
-                {/*DE999999999*/}
+                <Heading
+                  className={classes(styles.title)}
+                  data-visible={true}
+                  level={3}
+                  weight="bold"
+                >
+                  {t('imprint_taxid')}
+                </Heading>
+            
+                DE366775338
 
                 <Heading
                   className={classes(styles.title)}

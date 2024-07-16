@@ -94,6 +94,36 @@ export const ProjectSummary = ({
           </div>
         </>
       )}
+      {model.type === 'both' && (
+        <>
+          <div className={styles.model} data-device="laptop">
+            <Model
+              alt={model.alt}
+              cameraPosition={{ x: 0, y: 0, z: 12 }}
+              showDelay={700}
+              show={visible}
+              models={[
+                {
+                  ...deviceModels.laptop,
+                  position: { x: -1, y: -0.3, z: 0.4 },
+                  texture: {
+                    ...model.textures[0],
+                    sizes: laptopSizes,
+                  },
+                },
+                // {
+                //   ...deviceModels.phone,
+                //   position: { x: 0.6, y: -0.5, z: 0.8 },
+                //   texture: {
+                //     ...model.textures[1],
+                //     sizes: phoneSizes,
+                //   },
+                // },
+              ]}
+            />
+          </div>
+        </>
+      )}
       {model.type === 'phones' && (
         <>
           <div className={styles.model} data-device="phone">

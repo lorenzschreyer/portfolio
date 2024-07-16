@@ -1,5 +1,8 @@
 // noinspection ES6UnusedImports
 
+import websiteSchoenauerLarge from 'assets/website-schoenauer-large.png';
+import websiteSchoenauerPlaceholder from 'assets/website-schoenauer-placeholder.png';
+import websiteSchoenauer from 'assets/website-schoenauer.png';
 import codingChallengeLarge from 'assets/coding-challenge-title-large.png';
 import codingChallengePlaceholder from 'assets/coding-challenge-title-placeholder.png';
 import codingChallenge from 'assets/coding-challenge-title.png';
@@ -31,13 +34,14 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
+  const projectFour = useRef();
   const details = useRef();
 
   const { t } = useTranslation();
   const disciplines = [t('developer'), t('architect'), t('designer'), t('tester'), t('security')];
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -94,12 +98,33 @@ export const Home = () => {
 
       <ProjectSummary
         id="project-1"
+        // alternate
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
         title={t('project1_title')}
         description={t('project1_description')}
         buttonText={t('project1_buttonText')}
+        buttonLink="/projects/websites"
+        model={{
+          type: 'laptop',
+          alt: 'website schoenauer',
+          textures: [
+            {
+              srcSet: [websiteSchoenauer, websiteSchoenauerLarge],
+              placeholder: websiteSchoenauerPlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-2"
+        sectionRef={projectTwo}
+        visible={visibleSections.includes(projectTwo.current)}
+        index={2}
+        title={t('project2_title')}
+        description={t('project2_description')}
+        buttonText={t('project2_buttonText')}
         buttonLink="/projects/amplimind-codingchallenge"
         model={{
           type: 'laptop',
@@ -113,15 +138,15 @@ export const Home = () => {
         }}
       />
       <ProjectSummary
-        id="project-2"
+        id="project-3"
         // change side
         alternate
-        sectionRef={projectTwo}
-        visible={visibleSections.includes(projectTwo.current)}
-        index={2}
-        title={t('project2_title')}
-        description={t('project2_description')}
-        buttonText={t('project2_buttonText')}
+        sectionRef={projectThree}
+        visible={visibleSections.includes(projectThree.current)}
+        index={3}
+        title={t('project3_title')}
+        description={t('project3_description')}
+        buttonText={t('project3_buttonText')}
         buttonLink={socialLinks[2].url + "/solarMonitor"}
         model={{
           type: 'phone',
@@ -135,13 +160,13 @@ export const Home = () => {
         }}
       />
       <ProjectSummary
-        id="project-3"
-        sectionRef={projectThree}
-        visible={visibleSections.includes(projectThree.current)}
-        index={3}
-        title={t('project3_title')}
-        description={t('project3_description')}
-        buttonText={t('project1_buttonText')}
+        id="project-4"
+        sectionRef={projectFour}
+        visible={visibleSections.includes(projectFour.current)}
+        index={4}
+        title={t('project4_title')}
+        description={t('project4_description')}
+        buttonText={t('project2_buttonText')}
         buttonLink="/projects/smart-light-button"
         model={{
           type: 'laptop',

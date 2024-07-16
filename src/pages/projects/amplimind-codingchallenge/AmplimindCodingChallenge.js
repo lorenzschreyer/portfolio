@@ -30,7 +30,7 @@ export const AmplimindCodingChallenge = () => {
   const { t } = useTranslation();
   return (
     <Fragment>
-      <Meta title={t('project1_title')} prefix="Projects" description={t('project1_description')} />
+      <Meta title={t('project2_title')} prefix="Projects" description={t('project2_description')} />
       <ProjectContainer className={styles.slice}>
         <ProjectBackground
           src={codingChallengeCode}
@@ -39,8 +39,8 @@ export const AmplimindCodingChallenge = () => {
           opacity={0.8}
         />
         <ProjectHeader
-          title={t('project1_title')}
-          description={t('project1_description')}
+          title={t('project2_title')}
+          description={t('project2_description')}
           linkLabel="amplimind"
           url="https://www.amplimind.io"
           roles={roles}
@@ -66,18 +66,18 @@ export const AmplimindCodingChallenge = () => {
         </ProjectSection>
         <ProjectSection padding="bottom">
           <ProjectSectionContent>
-            <ProjectSectionHeading>{t('project1_vision')}</ProjectSectionHeading>
+            <ProjectSectionHeading>{t('project2_vision')}</ProjectSectionHeading>
             <ProjectSectionText>
-              {t('project1_vision_desc')}
+              {t('project2_vision_desc')}
 
             </ProjectSectionText>
           </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection light>
           <ProjectSectionContent>
-            <ProjectSectionHeading>{t('project1_approach')}</ProjectSectionHeading>
+            <ProjectSectionHeading>{t('project2_approach')}</ProjectSectionHeading>
             <ProjectSectionText>
-              {t('project1_approach_desc')}
+              {t('project2_approach_desc')}
               {/*<span dangerouslySetInnerHTML={{__html: I18n.t('my_translation')}} ></span>*/}
             </ProjectSectionText>
           </ProjectSectionContent>

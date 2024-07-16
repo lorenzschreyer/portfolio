@@ -30,7 +30,7 @@ export const SmartLightButton = () => {
   const { t } = useTranslation();
   return (
     <Fragment>
-      <Meta title={t('project3_title')} prefix="Projects" description={t('project3_description')} />
+      <Meta title={t('project4_title')} prefix="Projects" description={t('project4_description')} />
       <ProjectContainer className={styles.slice}>
         <ProjectBackground
           src={smartLBCode}
@@ -39,8 +39,8 @@ export const SmartLightButton = () => {
           opacity={0.8}
         />
         <ProjectHeader
-          title={t('project3_title')}
-          description={t('project3_description')}
+          title={t('project4_title')}
+          description={t('project4_description')}
           // linkLabel="amplimind"
           // url="https://www.amplimind.io"
           roles={roles}
@@ -66,16 +66,16 @@ export const SmartLightButton = () => {
         </ProjectSection>
         <ProjectSection padding="bottom">
           <ProjectSectionContent>
-            <ProjectSectionHeading>{t('project3_idea')}</ProjectSectionHeading>
+            <ProjectSectionHeading>{t('project4_idea')}</ProjectSectionHeading>
             <ProjectSectionText>
-              {t('project3_idea_desc')}
+              {t('project4_idea_desc')}
 
             </ProjectSectionText>
           </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection light>
           <ProjectSectionContent>
-            <ProjectSectionHeading>{t('project3_components')}</ProjectSectionHeading>
+            <ProjectSectionHeading>{t('project4_components')}</ProjectSectionHeading>
             <Table>
               <TableBody>
                 <TableRow>
@@ -91,10 +91,10 @@ export const SmartLightButton = () => {
                   <TableHeadCell>{t('cables')}</TableHeadCell>
                 </TableRow>
                 <TableRow>
-                  <TableHeadCell>{t('project3_lightswitch')}</TableHeadCell>
+                  <TableHeadCell>{t('project4_lightswitch')}</TableHeadCell>
                 </TableRow>
                 <TableRow>
-                  <TableHeadCell>(optional) {t('project3_any_sensors')}</TableHeadCell>
+                  <TableHeadCell>(optional) {t('project4_any_sensors')}</TableHeadCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -102,19 +102,19 @@ export const SmartLightButton = () => {
         </ProjectSection>
         <ProjectSection>
           <ProjectSectionContent>
-            <ProjectSectionHeading>{t('project3_implementation')}</ProjectSectionHeading>
+            <ProjectSectionHeading>{t('project4_implementation')}</ProjectSectionHeading>
             <ProjectSectionText>
-              {t('project3_implementation_desc1')}<br/><br/>
-              {t('project3_implementation_desc2')}
+              {t('project4_implementation_desc1')}<br/><br/>
+              {t('project4_implementation_desc2')}
               {/*<span dangerouslySetInnerHTML={{__html: I18n.t('my_translation')}} ></span>*/}
             </ProjectSectionText>
           </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection light>
           <ProjectSectionContent>
-            <ProjectSectionHeading>{t('project3_whatscool')}</ProjectSectionHeading>
+            <ProjectSectionHeading>{t('project4_whatscool')}</ProjectSectionHeading>
             <ProjectSectionText>
-              {t('project3_whatscool_desc')}
+              {t('project4_whatscool_desc')}
               {/*<span dangerouslySetInnerHTML={{__html: I18n.t('my_translation')}} ></span>*/}
             </ProjectSectionText>
           </ProjectSectionContent>

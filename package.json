@@ -41,7 +41,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "deploy": "aws s3 sync --delete out/ s3://hamish-portfolio-site",
+    "deploy": "aws s3 sync --delete out/ s3://aws-lorenz-portfolio",
     "deploy:functions": "cd functions && npm run deploy",
     "start": "next start",
     "test": "echo 'write some tests'"

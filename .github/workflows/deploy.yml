@@ -1,0 +1,139 @@
+name: Build & Deploy to AWS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  AWS_REGION: eu-central-1
+  ECR_REPOSITORY: portfolio
+  APP_RUNNER_SERVICE: portfolio-service
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build, tag, and push Docker image to ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build \
+            --build-arg NEXT_PUBLIC_WEBSITE_URL=${{ vars.NEXT_PUBLIC_WEBSITE_URL }} \
+            --build-arg NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL }} \
+            -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+            -t $ECR_REGISTRY/$ECR_REPOSITORY:latest \
+            .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+      - name: Deploy to App Runner
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          # Check if service exists
+          SERVICE_ARN=$(aws apprunner list-services \
+            --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].ServiceArn | [0]" \
+            --output text 2>/dev/null)
+
+          if [ "$SERVICE_ARN" = "None" ] || [ -z "$SERVICE_ARN" ]; then
+            echo "Creating new App Runner service..."
+            aws apprunner create-service \
+              --service-name "$APP_RUNNER_SERVICE" \
+              --source-configuration '{
+                "AuthenticationConfiguration": {
+                  "AccessRoleArn": "'"${{ secrets.APP_RUNNER_ECR_ROLE_ARN }}"'"
+                },
+                "ImageRepository": {
+                  "ImageIdentifier": "'"$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"'",
+                  "ImageRepositoryType": "ECR",
+                  "ImageConfiguration": {
+                    "Port": "3000",
+                    "RuntimeEnvironmentVariables": {
+                      "NODE_ENV": "production"
+                    }
+                  }
+                },
+                "AutoDeploymentsEnabled": false
+              }' \
+              --instance-configuration '{
+                "Cpu": "0.25 vCPU",
+                "Memory": "0.5 GB"
+              }' \
+              --health-check-configuration '{
+                "Protocol": "HTTP",
+                "Path": "/",
+                "Interval": 20,
+                "Timeout": 5,
+                "HealthyThreshold": 1,
+                "UnhealthyThreshold": 5
+              }'
+          else
+            echo "Updating existing App Runner service..."
+            aws apprunner update-service \
+              --service-arn "$SERVICE_ARN" \
+              --source-configuration '{
+                "AuthenticationConfiguration": {
+                  "AccessRoleArn": "'"${{ secrets.APP_RUNNER_ECR_ROLE_ARN }}"'"
+                },
+                "ImageRepository": {
+                  "ImageIdentifier": "'"$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"'",
+                  "ImageRepositoryType": "ECR",
+                  "ImageConfiguration": {
+                    "Port": "3000",
+                    "RuntimeEnvironmentVariables": {
+                      "NODE_ENV": "production"
+                    }
+                  }
+                },
+                "AutoDeploymentsEnabled": false
+              }'
+          fi
+
+      - name: Wait for deployment
+        run: |
+          SERVICE_ARN=$(aws apprunner list-services \
+            --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].ServiceArn | [0]" \
+            --output text)
+
+          echo "Waiting for App Runner service to become stable..."
+          for i in $(seq 1 30); do
+            STATUS=$(aws apprunner describe-service \
+              --service-arn "$SERVICE_ARN" \
+              --query "Service.Status" \
+              --output text)
+            echo "Status: $STATUS (attempt $i/30)"
+            if [ "$STATUS" = "RUNNING" ]; then
+              SERVICE_URL=$(aws apprunner describe-service \
+                --service-arn "$SERVICE_ARN" \
+                --query "Service.ServiceUrl" \
+                --output text)
+              echo "Deployment successful!"
+              echo "Service URL: https://$SERVICE_URL"
+              exit 0
+            fi
+            sleep 20
+          done
+          echo "Timeout waiting for deployment"
+          exit 1

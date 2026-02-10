@@ -3,7 +3,11 @@ FROM node:22-bookworm AS build
 
 WORKDIR /app
 
-# Optional: Telemetrie deaktivieren
+# Build arguments for environment variables
+ARG NEXT_PUBLIC_WEBSITE_URL
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_WEBSITE_URL=$NEXT_PUBLIC_WEBSITE_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN apt-get update && apt-get install -y \

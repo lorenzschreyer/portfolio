@@ -7,13 +7,6 @@
   "author": "Lorenz Schreyer <dev@lorenzschreyer.de>",
   "devDependencies": {
     "@mapbox/rehype-prism": "^0.9.0",
-    "@storybook/addon-a11y": "^6.5.10",
-    "@storybook/addon-actions": "^6.5.10",
-    "@storybook/addon-controls": "^6.5.10",
-    "@storybook/addon-toolbars": "^6.5.10",
-    "@storybook/builder-webpack5": "^6.5.10",
-    "@storybook/manager-webpack5": "^6.5.10",
-    "@storybook/react": "^7.6.17",
     "@svgr/webpack": "^6.3.1",
     "esbuild": "^0.15.2",
     "eslint": "^8.21.0",
@@ -39,7 +32,6 @@
     "i18next": "^23.10.0",
     "mdx-bundler": "^9.0.1",
     "next": "^14.1.0",
-    "npm": "^10.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^14.0.5",
@@ -49,13 +41,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:storybook": "build-storybook -o build-storybook && node scripts/draco-storybook",
-    "deploy": "aws s3 sync --delete build/ s3://hamish-portfolio-site",
-    "deploy:storybook": "aws s3 sync --delete build-storybook s3://hamish-portfolio-storybook",
+    "deploy": "aws s3 sync --delete out/ s3://hamish-portfolio-site",
     "deploy:functions": "cd functions && npm run deploy",
     "start": "next start",
-    "test": "echo 'write some tests'",
-    "storybook": "start-storybook -p 9009 -h localhost"
+    "test": "echo 'write some tests'"
   },
   "browserslist": {
     "production": [

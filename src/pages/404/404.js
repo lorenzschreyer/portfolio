@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 
 
 export function Page404() {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className={styles.page}>

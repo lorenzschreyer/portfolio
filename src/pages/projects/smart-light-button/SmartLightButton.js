@@ -19,7 +19,6 @@ import {
 import { Fragment } from 'react';
 import { media } from 'utils/style';
 import styles from './SmartLightButton.module.css';
-import {Button} from "../../../components/Button";
 import {Table, TableBody, TableCell, TableHeadCell, TableRow} from "../../../components/Table";
 
 import { useTranslation } from "react-i18next";

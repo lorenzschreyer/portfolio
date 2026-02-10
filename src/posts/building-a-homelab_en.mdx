@@ -1,0 +1,135 @@
+---
+title: My Journey to the perfect HomeLab Server
+abstract: The perfect HomeLab Server is hard to find. It should be quiet and powerefficient, but also fast small and reliable. Here i will present my Journey to the perfekt HomeLab Server.
+date: '2026-02-10'
+banner: /static/the-perfect-homelab-server.png
+featured: true
+---
+
+_Why you need one and how to build it properly_
+
+## Why even build a HomeLab?
+
+If you are seriously working with modern IT, it is hard to avoid having a HomeLab. Sure, many things can be learned theoretically — in lectures, through tutorials, or very modern: with **AI**. But you only **truly understand** systems once they are running, break down, and you have to fix them yourself.
+
+A HomeLab is the perfect playground for exactly that:
+
+- Testing and segmenting networks
+- Experimenting with firewalls like **[OPNsense](https://opnsense.org/)** or pfSense
+- Building, tearing down, and rebuilding **Proxmox** VMs and containers (CTs)
+- Running self-hosted services like **[Nextcloud](https://nextcloud.com/)**, **[Dokploy](https://dokploy.com/)**, **Nginx**, **Traefik**, **Docker**, or entire stacks of them
+
+The list is practically endless. There is a huge **self-hosted community** (on Reddit or GitHub) and an incredible amount of **open-source software** just waiting to be hosted by yourself.
+
+Then come the truly interesting parts:  
+Setting up your **own Root CA**, understanding **ACME challenges**, and not just using TLS, but actually **understanding** what is happening under the hood. These are things that have been standard for years, yet are rarely questioned or deeply understood.
+
+Identity providers like **[Authentik](https://goauthentik.io/)** or **[Keycloak](https://www.keycloak.org/)** fit perfectly into this picture — ideal for realistically modeling authentication, SSO, and role-based access control.
+
+### Theory vs. Reality: Zero Trust
+
+During your studies, you often learn early on how important a [Demilitarized Zone](<https://en.wikipedia.org/wiki/Demilitarized_zone_(computing)>) or a [Zero Trust Architecture](https://en.wikipedia.org/wiki/Zero_trust_architecture) is — but how do you actually implement this in practice?
+
+This is exactly where a HomeLab shines.
+
+**Long story short:**  
+Anyone who takes modern IT, cloud computing, security, or microservices seriously **needs a HomeLab**.
+
+### Microservices, Self-Hosting, and the Balancing Act
+
+The current trend clearly points toward **microservices**, containers, orchestration, and self-hosted developer tools:
+
+- GitLab
+- Docker registries
+- Nextcloud
+- Internal APIs
+- Monitoring & logging
+
+But here comes the catch:
+
+> **How do you balance space, aesthetics, performance, energy efficiency, and storage?**
+
+The honest answer: **It’s complicated.**
+
+Or put differently: you have to make conscious trade-offs.
+
+---
+
+## The Foundation: Efficient Hardware Instead of Server Monsters
+
+A classic 1U or 2U enterprise server is often a poor fit for a HomeLab: extremely loud, physically large, and power-hungry.
+
+The elegant solution: **Intel N100 / N150 platforms**.
+
+### The Core: Intel N150 (Twin Lake)
+
+The Intel **N150** (successor to the N100) is almost absurdly efficient:
+
+- **4 cores / 4 threads**
+- Up to **3.6 GHz**
+- **6 MB cache**
+- **Only 6 W TDP**
+
+I specifically chose this board:  
+👉 [CWWK M8 Mini-ITX mit Intel N150](https://www.amazon.de/dp/B0F9TRT965)
+
+It is ideal for 24/7 operation, virtualization, and storage — without feeling guilty about power consumption.  
+A big plus is the **10G LAN** and **two M.2 slots** for very fast SSDs. The single DDR5 SO-DIMM slot supports up to **48 GB of RAM**.
+
+### The Case: 19 Inches, but Not Deep
+
+One thing matters a lot for HomeLabs: **depth**.
+
+Typical server cases are often 60–80 cm deep — completely unnecessary if you want to mount:
+
+- Firewalls
+- Switches
+- Routers
+- Patch panels
+
+in a **network rack**.
+
+I chose this case from the Netherlands:  
+👉 [MyElectronics 19" 2U Mini-ITX Short Depth](https://www.myelectronics.nl/us/19-inch-2u-mini-itx-case-short-depth.html)
+
+It is perfect for my HomeLab because it is both **aesthetic and practical**.
+
+### Noise: The Most Underestimated Killer Criterion
+
+A HomeLab that sounds like a helicopter on final approach is not fun — especially if it sits in your office.
+
+The answer is a fantastic and reasonably priced company from Austria: **Noctua**.
+
+The case fits exactly:
+
+👉 [3× Noctua NF-A8](https://www.amazon.de/dp/B00NEMG62M)
+
+These fans are:
+
+- Extremely quiet
+- High-quality
+- Practically inaudible during continuous operation
+
+Once you use them, you never want anything else again.
+
+### Power Supply: Flex-ATX, but Efficient
+
+For the power supply, two things matter: the **Flex-ATX form factor** and **high efficiency**.  
+The higher the efficiency, the less heat is generated — and the quieter the fan needs to run.
+
+My choice:  
+👉 [FSP Flex Guru 300W Flex-ATX](https://www.amazon.de/dp/B08WQ491BY)
+
+300 W is more than enough, even with multiple HDDs, NVMe drives, and 10 GbE.
+
+---
+
+## Conclusion
+
+For **around €600**, I built a high-quality server that is perfectly tailored to my requirements.  
+A build that **fits into any office** and still looks truly professional.
+
+## Bonus: Cluster Upgrade
+
+The setup is further enhanced by **2× Lenovo ThinkCentre Mini PCs**.  
+Combined with Proxmox and Kubernetes, this allows for truly exciting cluster experiments — including high-availability services, load balancing, and realistic production-like scenarios.

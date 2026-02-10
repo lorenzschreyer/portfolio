@@ -17,15 +17,11 @@ import {
   ProjectSectionText,
 } from 'layouts/Project';
 import { Fragment } from 'react';
-import {classes, cssProps, media, numToMs} from 'utils/style';
+import { media } from 'utils/style';
 import styles from './Websites.module.css';
 import {Button} from "../../../components/Button";
-import {Table, TableBody, TableCell, TableHeadCell, TableRow} from "../../../components/Table";
 
 import { useTranslation } from "react-i18next";
-import {Section} from "../../../components/Section";
-import {Heading} from "../../../components/Heading";
-import {Text} from "../../../components/Text";
 
 const roles = ['Elementor', 'Wordpress', 'Hosting', ];
 

@@ -14,7 +14,7 @@ import { useRouter } from 'next/router';
 import { Fragment, createContext, useEffect, useReducer } from 'react';
 import { msToNum } from 'utils/style';
 import { ScrollRestore } from '../layouts/App/ScrollRestore';
-import i18n from "../components/Language/i18n";
+import '../components/Language/i18n';
 
 export const AppContext = createContext({});
 
@@ -60,7 +60,7 @@ const App = ({ Component, pageProps }) => {
             </VisuallyHidden>
             <Navbar />
             <main className={styles.app} tabIndex={-1} id="MainContent">
-              <AnimatePresence exitBeforeEnter>
+              <AnimatePresence mode="wait">
                 <m.div
                   key={route}
                   className={styles.page}

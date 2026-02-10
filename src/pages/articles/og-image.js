@@ -23,15 +23,19 @@ export async function generateOgImage(props) {
     // file does not exists, so we create it
   }
 
-  const browser = await puppeteer.launch({ headless: true , args: ['--no-sandbox']});
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 630 });
-  await page.goto(url, { waitUntil: 'networkidle0' });
-  const buffer = await page.screenshot();
-  await browser.close();
+  try {
+    const browser = await puppeteer.launch({ headless: true , args: ['--no-sandbox']});
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1200, height: 630 });
+    await page.goto(url, { waitUntil: 'networkidle0' });
+    const buffer = await page.screenshot();
+    await browser.close();
 
-  fs.mkdirSync(ogImageDir, { recursive: true });
-  fs.writeFileSync(imagePath, buffer);
+    fs.mkdirSync(ogImageDir, { recursive: true });
+    fs.writeFileSync(imagePath, buffer);
+  } catch (error) {
+    console.warn('Could not generate OG image:', error.message);
+  }
 
   return publicPath;
 }
